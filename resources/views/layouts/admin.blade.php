@@ -38,6 +38,10 @@
 
         <!-- Scripts -->
         <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
+        <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
+        <script>
+          CKEDITOR.replace('description');
+        </script>
          <!--   Core JS Files   -->
   <script src="{{ asset('admin/js/core/jquery.min.js') }}"></script>
   <script src="{{ asset('admin/js/core/popper.min.js') }}"></script>

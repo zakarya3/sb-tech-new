@@ -1856,7 +1856,6 @@ progress {
     color: #212529;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -7127,7 +7126,7 @@ fieldset:disabled .btn {
 }
 .text-primary {
     --bs-text-opacity: 1;
-    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+    color: #f28a38 !important;
 }
 .text-secondary {
     --bs-text-opacity: 1;

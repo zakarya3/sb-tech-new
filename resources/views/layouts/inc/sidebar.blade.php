@@ -10,27 +10,27 @@
     <div class="sidebar-wrapper">
       <ul class="nav">
         <li class="nav-item active  ">
-          <a class="nav-link" href="dashboard.html">
+          <a class="nav-link {{ Request::is('dashboard') ? 'active':'' }}" href="/dashboard">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="user.html">
-            <i class="material-icons">person</i>
-            <p>User Profile</p>
+          <a class="nav-link {{ Request::is('categories') ? 'active':'' }}" href="{{ url('categories') }}">
+            <i class="material-icons">category</i>
+            <p>Categories</p>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="tables.html">
-            <i class="material-icons">content_paste</i>
-            <p>Table List</p>
+          <a class="nav-link {{ Request::is('brands') ? 'active':'' }}" href="{{ 'brands' }}">
+            <i class="material-icons">branding_watermark</i>
+            <p>Marques</p>
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" href="typography.html">
-            <i class="material-icons">library_books</i>
-            <p>Typography</p>
+          <a class="nav-link {{ Request::is('products') ? 'active':'' }}" href="{{ 'products' }}">
+            <i class="material-icons">article</i>
+            <p>Produits</p>
           </a>
         </li>
         <li class="nav-item ">

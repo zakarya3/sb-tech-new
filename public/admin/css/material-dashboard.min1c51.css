@@ -14164,7 +14164,7 @@ thead.thead-inverse th {
     padding: 5px !important;
 }
 body {
-    background-color: #eee;
+    background-color: #eee !important;
     color: #3c4858;
     font-weight: 300;
 }
@@ -14613,7 +14613,7 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 .card .card-header-primary:not(.card-header-icon):not(.card-header-text),
 .card.card-rotate.bg-primary .back,
 .card.card-rotate.bg-primary .front {
-    background: linear-gradient(60deg, #ab47bc, #8e24aa);
+    background: #c0ac94;
 }
 .card.bg-info,
 .card .card-header-info .card-icon,
