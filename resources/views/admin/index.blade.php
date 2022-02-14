@@ -7,17 +7,16 @@
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
+                    <i class="material-icons">category</i>
                   </div>
-                  <p class="card-category">Used Space</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
+                  <p class="card-category">Totale Categories</p>
+                  <h3 class="card-title">{{ $category }}
+                    <small>Cats</small>
                   </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="javascript:;">Get More Space...</a>
+                    <i class="material-icons">update</i> Just Updated
                   </div>
                 </div>
               </div>
@@ -26,14 +25,16 @@
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">store</i>
+                    <i class="material-icons">article</i>
                   </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">Produits</p>
+                  <h3 class="card-title">{{ $product }}
+                    <small>Prods</small>
+                  </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    <i class="material-icons">update</i> Just Updated
                   </div>
                 </div>
               </div>
@@ -42,14 +43,16 @@
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                    <i class="material-icons">branding_watermark</i>
                   </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
+                  <p class="card-category">Marques</p>
+                  <h3 class="card-title">{{ $brand }}
+                    <small>Brds</small>
+                  </h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
+                    <i class="material-icons">update</i> Just Updated
                   </div>
                 </div>
               </div>

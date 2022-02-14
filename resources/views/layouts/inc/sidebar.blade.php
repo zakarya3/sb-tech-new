@@ -9,26 +9,26 @@
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">
-        <li class="nav-item active  ">
-          <a class="nav-link {{ Request::is('dashboard') ? 'active':'' }}" href="/dashboard">
+        <li class="nav-item {{ Request::is('dashboard') ? 'active':'' }}  ">
+          <a class="nav-link " href="/dashboard">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link {{ Request::is('categories') ? 'active':'' }}" href="{{ url('categories') }}">
+        <li class="nav-item {{ Request::is('categories') ? 'active':'' }}">
+          <a class="nav-link " href="{{ url('categories') }}">
             <i class="material-icons">category</i>
             <p>Categories</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link {{ Request::is('brands') ? 'active':'' }}" href="{{ 'brands' }}">
+        <li class="nav-item {{ Request::is('brands') ? 'active':'' }}">
+          <a class="nav-link" href="{{ 'brands' }}">
             <i class="material-icons">branding_watermark</i>
             <p>Marques</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link {{ Request::is('products') ? 'active':'' }}" href="{{ 'products' }}">
+        <li class="nav-item {{ Request::is('products') ? 'active':'' }}">
+          <a class="nav-link" href="{{ 'products' }}">
             <i class="material-icons">article</i>
             <p>Produits</p>
           </a>
