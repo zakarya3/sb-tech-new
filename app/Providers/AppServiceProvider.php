@@ -28,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //Schema::defaultStringLength(191);
         $category = Category::all();
+        $cartItems = \Cart::getContent();
         View::share('category', $category);
+        View::share('cartItems', $cartItems);;
     }
 }

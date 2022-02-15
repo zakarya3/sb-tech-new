@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Support\Facades\Session;
 use App\Notifications\SendEmailNotification;
 use Notification;
 use App\Models\Brand;
@@ -16,7 +17,8 @@ class FrontController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $cartItems = \Cart::getContent();
+        return view('welcome', compact('cartItems'));
     }
 
     public function products($name)
@@ -26,7 +28,8 @@ class FrontController extends Controller
             $id = $category->id;
             $brand = Brand::all();
             $product = Product::where('cate_id',$id)->paginate(12);
-            return view('products',compact('product','brand'));
+            $cartItems = \Cart::getContent();
+            return view('products',compact('product','brand','cartItems'));
 
         }
     }
@@ -35,6 +38,18 @@ class FrontController extends Controller
     {
         $product = Product::where('brand_id',$id)->paginate(12);
         $brand = Brand::all();
-        return view('products',compact('product','brand'));
+        $cartItems = \Cart::getContent();
+        return view('products',compact('product','brand','cartItems'));
+    }
+
+    public function product($cate, $name)
+    {
+        $category = Category::where('name',$cate)->first();
+        $id = $category->id;
+        $other_prd = Product::where('cate_id',$id)->get()->take(3);
+        $product = Product::where('product_name',$name)->first();
+        $cartItems = \Cart::getContent();
+        return view('product', compact('product','other_prd','cartItems'));
+    
     }
 }

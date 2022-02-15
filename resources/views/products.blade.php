@@ -75,7 +75,7 @@
                         <div class="col pb-1 pb-lg-3 mb-4">
                             <article class="card h-100 border-0 shadow-sm">
                             <div class="position-relative">
-                                <a href="portfolio-single-course.html" class="d-block position-absolute w-100 h-100 top-0 start-0"></a>
+                                <a href="{{ url('product/'.$item->category->name.'/'.$item->product_name) }}" class="d-block position-absolute w-100 h-100 top-0 start-0"></a>
                                 <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-2 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" title="Save to Favorites">
                                 <i class="bx bx-bookmark"></i>
                                 </a>
@@ -83,14 +83,22 @@
                             </div>
                             <div class="card-body pb-3">
                                 <h3 class="h5 mb-2">
-                                <a href="portfolio-single-course.html">{{ $item->product_name }}</a>
+                                <a href="{{ url('product/'.$item->category->name.'/'.$item->product_name) }}">{{ $item->product_name }}</a>
                                 </h3>
                                 <p class="fs-sm mb-2">{{ $item->category->name }}</p>
                                 <p class="fs-lg fw-semibold text-primary mb-0">{{ $item->price }} <small>MAD</small></p>
                             </div>
                             <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">
+                              <form action="{{ route('cart.store') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <input type="hidden" value="{{ $item->id }}" name="id">
+                                <input type="hidden" value="{{ $item->product_name }}" name="name">
+                                <input type="hidden" value="{{ $item->price }}" name="price">
+                                <input type="hidden" value="{{ $item->image }}"  name="image">
+                                <input type="hidden" value="1" name="quantity">
                                 <button class="btn btn-primary btn-shadow d-block w-100" type="submit"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i> Add to Cart</button>
-                            </div>
+                              </form>
+                              </div>
                             </article>
                         </div>
                     @endforeach

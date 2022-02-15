@@ -15,8 +15,8 @@
                   @method('PUT')
                   <div class="row">
                     <label for="">Categorie</label>
-                    <select class="form-select"  name="cate_id">
-                        <option value="">{{ $products->category->name }}</option>
+                    <select class="form-select" required  name="cate_id">
+                        <option value="">select a category</option>
                         @foreach ($category as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach

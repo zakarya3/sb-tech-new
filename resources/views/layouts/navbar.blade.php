@@ -221,34 +221,30 @@
         </button>
         <div class="navbar-tool dropdown ms-3">
           <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="{{ url('cart') }}"><span
-              class="navbar-tool-label">6</span><i class="fas fa-shopping-cart"></i></a><a class="navbar-tool-text"
+              class="navbar-tool-label">{{ Cart::getTotalQuantity()}}</span><i class="fas fa-shopping-cart"></i></a><a class="navbar-tool-text"
             href="{{ url('cart') }}"></a>
           <!-- Cart dropdown-->
           <div class="dropdown-menu dropdown-menu-end">
             <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem">
-              <div style="height: 15rem" data-simplebar data-simplebar-auto-hide="false">
-                <div class="widget-cart-item py-2 border-bottom product_data">
-                  <input type="hidden" value="" class="prod_id" />
-                  <form action="" method="post">
-                    <input type="hidden" value="" name="id" />
+              <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                @foreach ($cartItems as $item)
+                  <div class="widget-cart-item py-2 border-bottom product_data">
+                    <input type="hidden" value="{{ $item->id }}" class="prod_id">
+                  <form action="{{ route('cart.remove') }}" method="post">
+                    @csrf 
+                    <input type="hidden" value="{{ $item->id }}" name="id"> 
                     <button class="btn-close text-danger" type="submit" aria-label="Remove">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </form>
-                  <div class="d-flex align-items-center">
-                    <a class="d-block flex-shrink-0" href="{{ url('cart') }}"><img src="assets/img/brands/01.svg"
-                        width="64" alt="Product" /></a>
-                    <div class="ps-2">
-                      <h6 class="widget-product-title">
-                        <a href="{{ url('cart') }}">product1</a>
-                      </h6>
-                      <div class="widget-product-meta">
-                        <span class="text-accent me-2">25.<small>00 MAD</small></span><span class="text-muted">x
-                          6</span>
+                    <div class="d-flex align-items-center"><a class="d-block flex-shrink-0" href="{{ url('cart') }}"><img src="{{ asset('assets/uploads/products/images/'.$item->attributes->image) }}" width="64" alt="Product"></a>
+                      <div class="ps-2">
+                        <h6 class="widget-product-title"><a href="{{ url('cart') }}">{{ $item->name }}</a></h6>
+                        <div class="widget-product-meta"><span class="text-accent me-2">{{ $item->price }}.<small>00 MAD</small></span><span class="text-muted">x {{ $item->quantity }}</span></div>
                       </div>
                     </div>
                   </div>
-                </div>
+                @endforeach
               </div>
               <div class="d-flex flex-wrap justify-content-between
                   align-items-center py-3"></div>
@@ -361,9 +357,11 @@
 </a>
 
 <!-- Vendor Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/js/smooth-scroll.polyfills.min.js') }}"></script>
 <script src="{{ asset('frontend/js/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('frontend/js/custom.js') }}"></script>
 
 <!-- Main Theme Script -->
 <script src="{{ asset('frontend/js/theme.min.js') }}"></script>

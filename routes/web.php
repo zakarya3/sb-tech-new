@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Cart\CartPController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,14 @@ Route::get('/',[FrontController::class,'index']);
 
 Route::get('/products-items/{name}',[FrontController::class,'products']);
 Route::get('/products-items/order-by-brand/{id}',[FrontController::class,'filter']);
+
+Route::get('/product/{cat}/{name}',[FrontController::class,'product']);
+
+Route::get('cart', [CartPController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartPController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartPController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartPController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartPController::class, 'clearAllCart'])->name('cart.clear');
 
 Auth::routes();
 
