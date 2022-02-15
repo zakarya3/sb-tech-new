@@ -178,8 +178,8 @@
     <header class="header navbar navbar-expand-lg navbar-light bg-light
         navbar-sticky">
       <div class="container px-3">
-        <a href="index.html" class="navbar-brand pe-3">
-          <img src="assets/img/logo/logo.png" width="150" alt="SB-TECH" />
+        <a href="{{ url('/') }}" class="navbar-brand pe-3">
+          <img src="{{ asset('assets/img/logo/logo.png') }}" width="150" alt="SB-TECH" />
         </a>
         <div id="navbarNav" class="offcanvas offcanvas-end">
           <div class="offcanvas-header border-bottom">
@@ -188,23 +188,21 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"
-                  aria-current="page">Accueil</a>
+              <li class="nav-item">
+                <a href="{{ url('/') }}" class="nav-link">Accueil</a>
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Produits <i class='bx bx-chevron-down' ></i></a>
+                <a href="" class="nav-link " data-bs-toggle="dropdown">Produits <i class='bx bx-chevron-down' ></i></a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <a href="account-details.html" class="dropdown-item">Robotique</a>
-                  </li>
-                  <li>
-                    <a href="account-security.html" class="dropdown-item">automatisme</a>
-                  </li>
+                  @foreach ($category as $item)
+                    <li>
+                      <a href="{{ url('products-items/'.$item->name) }}" class="dropdown-item">{{ $item->name }}</a>
+                    </li>
+                  @endforeach
                 </ul>
               </li>
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Contactez-nous</a>
+              <li class="nav-item ">
+                <a href="kf.html" class="nav-link" >Contactez-nous</a>
               </li>
               <li class="nav-item">
                 <a href="components/typography.html" class="nav-link">Mes commandes</a>
@@ -271,7 +269,7 @@
     <div class="row pb-5">
       <div class="col-lg-4 col-md-6">
         <div class="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
-          <img src="assets/img/logo/logo.png" width="150" alt="SB-TECH" />
+          <img src="{{ asset('assets/img/logo/logo.png') }}" width="150" alt="SB-TECH" />
         </div>
         
         <p class="fs-sm text-light opacity-70 pb-lg-3 mb-4">
@@ -304,7 +302,7 @@
             <div id="useful-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
               <ul class="nav flex-column pb-lg-1 mb-lg-3">
                 <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Accueil</a>
+                  <a href="{{ url('/') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Accueil</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Contactez-nous!!</a>
@@ -313,7 +311,7 @@
                   <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Produits</a>
+                  <a href="{{ url('/login') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>
                 </li>
               </ul>
             </div>

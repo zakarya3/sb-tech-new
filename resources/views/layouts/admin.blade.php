@@ -7,7 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'SB-TECH') }}</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo/logosvg.svg') }}" type="image/svg" />
 
     <!-- Styles -->
   <link href="{{ asset('admin/css/material-dashboard.min1c51.css') }}" rel="stylesheet" />
