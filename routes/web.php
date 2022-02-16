@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Cart\CartPController;
+use App\Http\Controllers\Cart\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,14 @@ Route::post('update-cart', [CartPController::class, 'updateCart'])->name('cart.u
 Route::post('remove', [CartPController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartPController::class, 'clearAllCart'])->name('cart.clear');
 
+
+
 Auth::routes();
+Route::get('checkout', [CheckoutController::class, 'index'])->name('check.list');
+Route::post('payment', [CartPController::class, 'addUser']);
+Route::post('place-order', [CheckoutController::class, 'placeorder']);
+Route::get('checkout-payment', [CheckoutController::class, 'index_pay']);
+Route::put('payment-method', [CheckoutController::class, 'paymentmethod']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

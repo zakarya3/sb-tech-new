@@ -89,7 +89,7 @@
                                 <p class="fs-lg fw-semibold text-primary mb-0">{{ $item->price }} <small>MAD</small></p>
                             </div>
                             <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">
-                              <form action="{{ route('cart.store') }}" method="post" enctype="multipart/form-data">
+                              <form action="{{ route('cart.store') }}" style="width: 100%" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" value="{{ $item->id }}" name="id">
                                 <input type="hidden" value="{{ $item->product_name }}" name="name">

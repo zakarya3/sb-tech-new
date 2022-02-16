@@ -94,7 +94,7 @@
                             </div>
                           </div>
                         </div>
-                        {{-- <form action="{{ route('check.list') }}" method="post"> --}}
+                        <form action="{{ route('check.list') }}" method="post">
                           <input type="hidden" value="{{ $total }}" name="">
                           <a class="btn btn-primary btn-shadow d-block w-100 mt-4" type="submit" href="{{ url('checkout') }}"><i class='bx bxs-credit-card' ></i>Commander</a>
                         </form>
