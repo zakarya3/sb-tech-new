@@ -41,6 +41,7 @@ Route::post('payment', [CartPController::class, 'addUser']);
 Route::post('place-order', [CheckoutController::class, 'placeorder']);
 Route::get('checkout-payment', [CheckoutController::class, 'index_pay']);
 Route::put('payment-method', [CheckoutController::class, 'paymentmethod']);
+Route::get('checkout-complete', [CheckoutController::class, 'index_comp']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

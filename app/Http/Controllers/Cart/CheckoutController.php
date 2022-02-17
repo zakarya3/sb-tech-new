@@ -34,15 +34,24 @@ class CheckoutController extends Controller
     {
         $user = User::where('name',$request->session()->get('name'))->first();
         $order = Order::where('user_id',$user->id)->latest('created_at','desc')->first();
+        $orders = OrderItem::where('order_id',$order->id)->get();
         $user_name = $user->name;
+        $address = $user->address;
         $email['to'] = $user->email;
         $trackin = $order->tracking_no;
+        $date = $order->created_at;
         $price = $order->total_price;
         $choice = $request->order_choice;
-        $data = ['user_name' => $user_name, 'trackin' => $trackin, 'price' => $price,'choice' => $choice];
+        $data = ['orders' => $orders, 'date' => $date, 'address' => $address, 'user_name' => $user_name, 'trackin' => $trackin, 'price' => $price,'choice' => $choice];
         Mail::send('mail', $data, function ($message) use ($email) {
             $message->to($email['to']);
+            $message->subject('Votre commande');
+        });
+        Mail::send('admin-mail', $data, function ($message) use ($email) {
+            $message->to('zakaria.aanni@gmail.com');
             $message->subject('test');
         });
+        \Cart::clear();
+        return view('checkout-complete',compact('user'));
     }
 }

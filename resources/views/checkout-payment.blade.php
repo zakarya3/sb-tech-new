@@ -42,8 +42,8 @@
                               <div class="table-responsive">
                                   <table class="table table-bordered">
                                       <tr>
-                                        <th>Montant</th>
-                                        <th>11450DH/TTC TTC</th>
+                                        <td>Montant</td>
+                                        <td>{{ $total }} MAD</td>
           
                                       </tr>
                                     </thead>
