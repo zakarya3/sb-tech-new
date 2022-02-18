@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Cart\CartPController;
 use App\Http\Controllers\Cart\CheckoutController;
-
+use App\Http\Controllers\Weather\WeatherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,3 +66,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-brand/{id}', [BrandController::class,'destroy']);
 
 });
+
+
+/* Weather */
+Route::get('overview', [WeatherController::class,'index']);
+Route::get('search', [WeatherController::class,'search']);

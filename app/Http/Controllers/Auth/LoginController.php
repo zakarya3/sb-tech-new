@@ -38,6 +38,9 @@ class LoginController extends Controller
         {
             return redirect('/')->with('status','Logged in successfully');
         }
+        elseif (Auth::user()->role_as == '2') {
+            return redirect('overview')->with('status','Logged in successfully');
+        }
     }
 
 
