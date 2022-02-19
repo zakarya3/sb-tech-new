@@ -205,7 +205,7 @@
                 <a href="kf.html" class="nav-link" >Contactez-nous</a>
               </li>
               <li class="nav-item">
-                <a href="components/typography.html" class="nav-link">Mes commandes</a>
+                <a href="{{ url('myorders') }}" class="nav-link">Mes commandes</a>
               </li>
             </ul>
           </div>

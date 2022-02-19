@@ -8,7 +8,7 @@
                 <nav class="pt-4 mt-lg-3" aria-label="breadcrumb">
                   <ol class="breadcrumb mb-0">
                     <li class="breadcrumb-item">
-                      <a href="landing-online-courses.html"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
+                      <a href="{{ url('/') }}"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">Produits</li>
                   </ol>

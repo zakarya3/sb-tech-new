@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Front\FrontController;
+use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Cart\CartPController;
 use App\Http\Controllers\Cart\CheckoutController;
 use App\Http\Controllers\Weather\WeatherController;
@@ -42,6 +43,9 @@ Route::post('place-order', [CheckoutController::class, 'placeorder']);
 Route::get('checkout-payment', [CheckoutController::class, 'index_pay']);
 Route::put('payment-method', [CheckoutController::class, 'paymentmethod']);
 Route::get('checkout-complete', [CheckoutController::class, 'index_comp']);
+
+Route::get('myorders', [UserController::class, 'index']);
+Route::get('view-order/{id}', [UserController::class, 'view']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

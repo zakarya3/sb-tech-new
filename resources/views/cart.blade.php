@@ -8,7 +8,7 @@
             <nav class="pt-4 mt-lg-3" aria-label="breadcrumb">
                 <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item">
-                    <a href="landing-online-courses.html"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
+                    <a href="{{ url('/') }}"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">Panier</li>
                 </ol>
@@ -19,7 +19,7 @@
               <div class="d-lg-flex align-items-center justify-content-between py-4 mt-lg-2">
                 <h1 class="me-3">Les articles</h1>
                 <div class="d-md-flex mb-3">
-                  <a class="btn btn-outline-primary btn-sm ps-2" href=""><i class='bx bx-chevron-left'></i>Continue shopping</a>
+                  <a class="btn btn-outline-primary btn-sm ps-2" href="{{ url('/') }}"><i class='bx bx-chevron-left'></i>Continue shopping</a>
                 </div>
               </div>
             </div>
