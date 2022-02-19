@@ -202,7 +202,7 @@
                 </ul>
               </li>
               <li class="nav-item ">
-                <a href="kf.html" class="nav-link" >Contactez-nous</a>
+                <a href="{{ url('contact') }}" class="nav-link" >Contactez-nous</a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('myorders') }}" class="nav-link">Mes commandes</a>
@@ -301,10 +301,10 @@
                   <a href="{{ url('/') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Contactez-nous!!</a>
+                  <a href="{{ url('contact') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Contactez-nous!!</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
+                  <a href="{{ url('references') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
                   <a href="{{ url('/login') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\RefController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Front\UserController;
@@ -22,6 +23,9 @@ use App\Http\Controllers\Weather\WeatherController;
 */
 
 Route::get('/',[FrontController::class,'index']);
+Route::get('contact', [FrontController::class,'contact']);
+Route::put('contact-message', [FrontController::class,'send']);
+Route::get('references', [FrontController::class,'reference']);
 
 Route::get('/products-items/{name}',[FrontController::class,'products']);
 Route::get('/products-items/order-by-brand/{id}',[FrontController::class,'filter']);
@@ -68,6 +72,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-brand/{id}', [BrandController::class,'edit']);
     Route::put('update-brand/{id}', [BrandController::class,'update']);
     Route::get('delete-brand/{id}', [BrandController::class,'destroy']);
+
+    Route::get('reference', [RefController::class,'index']);
 
 });
 

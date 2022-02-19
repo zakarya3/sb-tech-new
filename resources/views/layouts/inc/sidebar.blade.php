@@ -33,10 +33,10 @@
             <p>Produits</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="icons.html">
-            <i class="material-icons">bubble_chart</i>
-            <p>Icons</p>
+        <li class="nav-item {{ Request::is('reference') ? 'active':'' }}">
+          <a class="nav-link" href="{{ 'reference' }}">
+            <i class="material-icons">room_preferences</i>
+            <p>Références</p>
           </a>
         </li>
         <li class="nav-item ">

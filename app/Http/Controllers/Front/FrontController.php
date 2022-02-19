@@ -12,6 +12,7 @@ use Notification;
 use App\Models\Brand;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
+use Mail;
 
 class FrontController extends Controller
 {
@@ -51,5 +52,32 @@ class FrontController extends Controller
         $cartItems = \Cart::getContent();
         return view('product', compact('product','other_prd','cartItems'));
     
+    }
+
+    public function contact()
+    {
+        $cartItems = \Cart::getContent();
+        return view('contact', compact('cartItems'));
+    }
+
+    public function send(Request $request)
+    {
+        $name = $request->name;
+        $phone = $request->phone;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message1 = $request->message;
+        $data = ['name'=> $name, 'phone'=> $phone, 'email'=> $email, 'subject'=> $subject, 'message1'=> $message1];
+        Mail::send('message', $data, function ($message) use ($email) {
+            $message->to('zakaria.aanni@gmail.com');
+            $message->subject('Question?');
+        });
+        return redirect()->back();
+    }
+
+    public function reference()
+    {
+        $cartItems = \Cart::getContent();
+        return view('references', compact('cartItems'));
     }
 }
