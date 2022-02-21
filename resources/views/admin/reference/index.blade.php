@@ -14,7 +14,7 @@
                     @csrf
                     <div class="row">
                       <label for="">Categorie</label>
-                      <select class="form-select" required name="cate_id">
+                      <select class="form-select" required name="categ_id">
                           <option value="">Select a category</option>
                           @foreach ($category as $item)
                           <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -78,11 +78,11 @@
                             <td>{{ $item->date }}</td>
                             <td>{{ $item->description }}</td>
                             <td>
-                              <img src="{{ asset('assets/uploads/products/images/'.$item->image) }}" class="cate-image" alt="image here">
+                              <img src="{{ asset('assets/uploads/references/images/'.$item->image) }}" class="cate-image" alt="image here">
                             </td>
                             <td>
-                              <a href="{{ url('edit-prd/'.$item->id) }}" class="btn btn-primary pull-righ">Modifier</a>
-                              <a href="{{ url('delete-prd/'.$item->id) }}" class="btn bg-danger pull-righ" style="color: white">Supprimer</a>
+                              <a href="{{ url('edit-ref/'.$item->id) }}" class="btn btn-primary pull-righ">Modifier</a>
+                              <a href="{{ url('delete-ref/'.$item->id) }}" class="btn bg-danger pull-righ" style="color: white">Supprimer</a>
                             </td>
                           </tr>
                         @endforeach

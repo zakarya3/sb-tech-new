@@ -21,6 +21,12 @@
             <p>Categories</p>
           </a>
         </li>
+        <li class="nav-item {{ Request::is('subcategory') ? 'active':'' }}">
+          <a class="nav-link" href="{{ ('subcategory') }}">
+            <i class="material-icons">category</i>
+            <p>Sous-categorie</p>
+          </a>
+        </li>
         <li class="nav-item {{ Request::is('brands') ? 'active':'' }}">
           <a class="nav-link" href="{{ 'brands' }}">
             <i class="material-icons">branding_watermark</i>
@@ -39,16 +45,10 @@
             <p>Références</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="map.html">
-            <i class="material-icons">location_ons</i>
-            <p>Maps</p>
-          </a>
-        </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="notifications.html">
-            <i class="material-icons">notifications</i>
-            <p>Notifications</p>
+        <li class="nav-item {{ Request::is('orders') ? 'active':'' }}">
+          <a class="nav-link" href="{{ 'orders' }}">
+            <i class="material-icons">fact_check</i>
+            <p>Commandes</p>
           </a>
         </li>
         <li class="nav-item ">

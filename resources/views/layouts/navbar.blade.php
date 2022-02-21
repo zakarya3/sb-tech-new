@@ -175,8 +175,7 @@
   <main class="page-wrapper">
     <!-- Navbar -->
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
-    <header class="header navbar navbar-expand-lg navbar-light bg-light
-        navbar-sticky">
+    <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
       <div class="container px-3">
         <a href="{{ url('/') }}" class="navbar-brand pe-3">
           <img src="{{ asset('assets/img/logo/logo.png') }}" width="150" alt="SB-TECH" />
@@ -192,17 +191,27 @@
                 <a href="{{ url('/') }}" class="nav-link">Accueil</a>
               </li>
               <li class="nav-item dropdown">
-                <a href="" class="nav-link " data-bs-toggle="dropdown">Produits <i class='bx bx-chevron-down' ></i></a>
-                <ul class="dropdown-menu">
-                  @foreach ($category as $item)
-                    <li>
-                      <a href="{{ url('products-items/'.$item->name) }}" class="dropdown-item">{{ $item->name }}</a>
-                    </li>
-                  @endforeach
-                </ul>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Produits <i class='bx bx-chevron-down'></i></a>
+                <div class="dropdown-menu">
+                  <div class="d-lg-flex pt-lg-3">
+                    <div class="mega-dropdown-column">
+                      @foreach ($category as $item)
+                      <h6 class="px-3 mb-2">{{ $item->name }}</h6>
+                      <ul class="list-unstyled mb-3">
+                        @foreach ($item->type as $items)
+                          <li><a href="{{ url('products-items/'.$items->name) }}" class="dropdown-item py-1">{{ $items->name }}</a></li>
+                        @endforeach
+                      </ul>
+                      @endforeach
+                    </div>
+                  </div>
+                </div>
               </li>
               <li class="nav-item ">
                 <a href="{{ url('contact') }}" class="nav-link" >Contactez-nous</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('overview') }}" class="nav-link">Could</a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('myorders') }}" class="nav-link">Mes commandes</a>
@@ -307,7 +316,7 @@
                   <a href="{{ url('references') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url('/login') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>
+                  <a href="{{ url('/dashboard') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>
                 </li>
               </ul>
             </div>

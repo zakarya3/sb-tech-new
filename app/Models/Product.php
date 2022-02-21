@@ -22,7 +22,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsto(Category::class, 'cate_id', 'id');
+        return $this->belongsto(SubCategory::class, 'cate_id', 'id');
     }
     public function brand()
     {

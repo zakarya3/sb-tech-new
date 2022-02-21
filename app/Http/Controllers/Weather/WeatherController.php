@@ -12,8 +12,20 @@ class WeatherController extends Controller
 {
     public function index(Request $request)
     {
-        $user = User::where('name',Auth::user()->name)->first();
-        return view('overview', compact('user'));
+        if (Auth::check()) {
+            if (Auth::user()->role_as == '2') {
+            $user = User::where('name',Auth::user()->name)->first();
+            return view('overview', compact('user'));
+            }
+            else {
+                Auth::logout();
+                Session::flush();
+                return redirect('/login')->with('status','Please Login First');
+            }
+        }
+        else{
+            return redirect('/login')->with('status','Please Login First');
+        }
         // dd($user);
     }
 

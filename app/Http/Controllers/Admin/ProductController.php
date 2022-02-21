@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\File;
 use App\Models\Brand;
 
@@ -14,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        $category = Category::all();
+        $category = SubCategory::all();
         $brand = Brand::all();
         return view('admin.products.index', compact('products','category','brand'));
     }
@@ -43,7 +44,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = Product::find($id);
-        $category = Category::all();
+        $category = SubCategory::all();
         return view('admin.products.edit',compact('products','category'));
     }
     public function update(Request $request, $id)

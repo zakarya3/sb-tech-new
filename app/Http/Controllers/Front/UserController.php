@@ -18,7 +18,7 @@ class UserController extends Controller
         if ($request->session()->has('name')) {
             $cartItems = \Cart::getContent();
             $user = User::where('name',$request->session()->get('name'))->first();
-            $orders = Order::where('user_id',$user->id)->get();      
+            $orders = Order::where('user_id',$user->id)->orderBy('created_at','desc')->get();      
             return view('orders',compact('orders','cartItems'));
         }else {
             return redirect()->back();

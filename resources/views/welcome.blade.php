@@ -516,47 +516,35 @@
           </section>
       
           <!-- News slider -->
-          <section class="bg-secondary border-bottom border-light py-5">
-            <div class="container py-md-3 py-lg-5">
-              <h2 class="h1 text-center pb-2">Catalogue</h2>
-              <div class="position-relative mx-md-2 px-md-5">
-                <!-- Swiper slider -->
-                <div class="swiper swiper-nav-onhover mx-n2">
-                  <div class="swiper-wrapper">
-                    <!-- Item -->
-                    <div class="swiper-slide h-auto py-3">
-                      <article class="card p-md-3 p-2 border-0 shadow-sm card-hover-primary
-                          h-100 mx-2">
-                        <div class="card-body pb-0">
-                          <div class="d-flex align-items-center justify-content-between
-                              mb-3">
-                            <a href="#" class="badge fs-sm text-nav bg-secondary
-                                text-decoration-none position-relative zindex-2">Catalogue</a>
-                            <span class="fs-sm text-muted"><script> 
-                            const date = new Date();
-                            document.write("2021-"+date.getFullYear())
-                            </script></span>
-                          </div>
-                          <h3 class="h4">
-                            <a href="assets/img/catalogue/Catalogue.pdf" download="" class="stretched-link">Obtenir le catalogue</a>
-                          </h3>
-                          <p class="mb-0">
-                            SB-TECH met en oeuvre des outils fiables pour optimiser l'offre en vue de répondre aux besoins de chaque client quelle que soit son activité.
-                          </p>
-                        </div>
-                      </article>
-                    </div>
+          <section class="container pt-5 mt-2 mt-md-4 mt-lg-5">
+            <div class="row pt-xl-3">
+              <div class="col-md-5 text-center text-md-start pb-5">
+                <h1 class="mb-4">Télécharger notre catalogue produits</h1>
+                <form action="">
+                  <div class="form-floating mb-4">
+                    <input class="form-control" type="text" id="fl-text" placeholder="Your name">
+                    <label for="fl-text">Nom</label>
                   </div>
-      
-                  <!-- Pagination (bullets) -->
-                  <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
-                </div>
+                  <div class="form-floating mb-4">
+                    <input class="form-control" type="email" id="fl-text" placeholder="Your name">
+                    <label for="fl-text">E-mail</label>
+                  </div>
+                  <div class="form-floating mb-4">
+                    <input class="form-control" type="text" id="fl-text" placeholder="Your name">
+                    <label for="fl-text">Entreprise (facultatif)</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Télécharger le catalogue</button>
+                </form>
+              </div>
+              <div class="col-xl-6 col-md-7 offset-xl-1 pb-4 pb-sm-3 pb-lg-0 mb-4
+                  mb-sm-5 mb-lg-0">
+                <img src="{{ asset('assets/img/pictures/cata.jpg') }}" class="rounded-3 shadow-sm" alt="Image" />
               </div>
             </div>
           </section>
       
           <!-- CTA -->
-          <section class="position-relative bg-dark py-5">
+          <section class="position-relative bg-dark py-5" style="margin-top: 2em">
             <span class="position-absolute top-0 start-0 w-100 h-100"
               style="background-color: rgba(255, 255, 255, 0.05)"></span>
             <div class="container position-relative zindex-5 text-center my-xl-3 py-1
@@ -566,7 +554,7 @@
                 SB-TECH Cloud Platform <br>
       Accédez à toutes les données de votre moniteur d'environnement ou de votre station météo
               </h2>
-              <a href="#" class="btn btn-primary shadow-primary btn-lg">Se connecter</a>
+              <a href="{{ url('overview') }}" class="btn btn-primary shadow-primary btn-lg">Se connecter</a>
             </div>
           </section>
 @endsection

@@ -37,7 +37,9 @@
                                 <!-- Shoes-->
                                 <div class="accordion-item">
                                   @foreach ($category as $item)
-                                  <h3><a class="accordion-button collapsed" href="{{ url('products-items/'.$item->name) }}">{{ $item->name }}</a></h3>
+                                    @foreach ($item->type as $it)
+                                    <h3><a class="accordion-button collapsed" href="{{ url('products-items/'.$it->name) }}">{{ $it->name }}</a></h3>
+                                    @endforeach
                                   @endforeach
                                 </div>
                               </div>

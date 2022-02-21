@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\RefController;
 use App\Http\Controllers\Admin\BrandController;
@@ -60,6 +62,12 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('edit-cat/{id}', [CategoryController::class,'edit']);
     Route::put('update-category/{id}', [CategoryController::class,'update']);
     Route::get('delete-category/{id}', [CategoryController::class,'destroy']);
+    
+    Route::get('subcategory', 'Admin\TypeController@index');
+    Route::post('insert-type', 'Admin\TypeController@insert');
+    Route::get('edit-type/{id}', [TypeController::class,'edit']);
+    Route::put('update-type/{id}', [TypeController::class,'update']);
+    Route::get('delete-type/{id}', [TypeController::class,'destroy']);
 
     Route::get('products', [ProductController::class,'index']);
     Route::post('insert-product', [ProductController::class,'insert']);
@@ -74,6 +82,15 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-brand/{id}', [BrandController::class,'destroy']);
 
     Route::get('reference', [RefController::class,'index']);
+    Route::post('insert-reference', [RefController::class,'insert']);
+    Route::get('edit-ref/{id}', [RefController::class,'edit']);
+    Route::get('delete-ref/{id}', [RefController::class,'destroy']);
+    Route::put('update-reference/{id}',[RefController::class,'update'] );
+
+    Route::get('orders', [OrderController::class, 'index']);
+    Route::get('admin/view-order/{id}', [OrderController::class, 'view']);
+    Route::put('update-order/{id}', [OrderController::class, 'updateorder']);
+    Route::get('order-history', [OrderController::class, 'orderhistory']);
 
 });
 

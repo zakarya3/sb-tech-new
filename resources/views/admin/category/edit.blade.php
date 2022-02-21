@@ -16,7 +16,7 @@
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
+                          <label class="bmd-label-floating">Categorie</label>
                           <input type="text" value="{{ $category->name }}" class="form-control" name="name">
                         </div>
                       </div>

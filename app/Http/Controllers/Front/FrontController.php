@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Session;
 use App\Notifications\SendEmailNotification;
 use Notification;
@@ -13,6 +14,7 @@ use App\Models\Brand;
 use App\Models\User;
 use Illuminate\Pagination\Paginator;
 use Mail;
+use App\Models\Reference;
 
 class FrontController extends Controller
 {
@@ -24,8 +26,8 @@ class FrontController extends Controller
 
     public function products($name)
     {
-        if (Category::where('name',$name)->exists()) {
-            $category = Category::where('name',$name)->first();
+        if (SubCategory::where('name',$name)->exists()) {
+            $category = SubCategory::where('name',$name)->first();
             $id = $category->id;
             $brand = Brand::all();
             $product = Product::where('cate_id',$id)->paginate(12);
@@ -45,7 +47,7 @@ class FrontController extends Controller
 
     public function product($cate, $name)
     {
-        $category = Category::where('name',$cate)->first();
+        $category = SubCategory::where('name',$cate)->first();
         $id = $category->id;
         $other_prd = Product::where('cate_id',$id)->get()->take(3);
         $product = Product::where('product_name',$name)->first();
@@ -78,6 +80,7 @@ class FrontController extends Controller
     public function reference()
     {
         $cartItems = \Cart::getContent();
-        return view('references', compact('cartItems'));
+        $references = Reference::all();
+        return view('references', compact('references', 'cartItems'));
     }
 }
