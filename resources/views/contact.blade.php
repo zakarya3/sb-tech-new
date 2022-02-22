@@ -60,10 +60,13 @@
         <h3 class="pb-2 pb-md-3 pb-lg-4">Contact Info</h3>
         <ul class="list-unstyled pb-1 pb-lg-4">
           <li class="mb-3 mb-lg-4">
-            <a href="mailto:info@sbtech.ma" class="nav-link d-inline-block fs-lg p-0">info@sbtech.ma</a>
+            <a href="mailto:info@sbtech.ma" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxl-gmail me-2'></i> info@sbtech.ma</a>
           </li>
           <li class="mb-3 mb-lg-4">
-            <a href="tel:+212 528217355" class="nav-link d-inline-block fs-lg p-0">+212 528 217 355</a>
+            <a href="tel:+212 528217355" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxs-phone me-2'></i>+212 528 217 355</a>
+          </li>
+          <li class="mb-3 mb-lg-4">
+            <a href="tel:++212 661461155" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
           </li>
           <li class="mb-3 mb-lg-4">
             <div class="text-nav fs-lg fw-medium">Bureau N 1 .Av Prince Abdelkader N 78 Cite Almassira Agadir</div>

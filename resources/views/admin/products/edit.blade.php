@@ -70,6 +70,17 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12">
+                      <div class="input-group mb-3">
+                        @if ($products->fiche)
+                        <a href="{{ url('assets/uploads/products/ficheTechnique/'.$products->fich) }}" download alt=""></a>
+                        @endif
+                        <label class="input-group-text" for="image">Fiche Technique</label>
+                        <input type="file"  name="fiche" class="form-control" id="image">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
                       <textarea name="description" id="" cols="30" rows="10">{{ $products->product_description }}</textarea>
                     </div>
                   </div>

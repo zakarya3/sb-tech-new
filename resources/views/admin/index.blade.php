@@ -61,10 +61,10 @@
               <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                    <i class="material-icons">fact_check</i>
                   </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
+                  <p class="card-category">Commandes</p>
+                  <h3 class="card-title">{{ $order }} Non traité</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -78,42 +78,26 @@
             <div class="col-lg-6 col-md-12">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h4 class="card-title">Employees Stats</h4>
-                  <p class="card-category">New employees on 15th September, 2016</p>
+                  <h4 class="card-title">Les stations de la météo</h4>
+                  <p class="card-category">nos stations</p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead class="text-warning">
                       <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>Nom</th>
+                      <th>E-mail</th>
+                      <th>Device ID</th>
                     </thead>
                     <tbody>
+                     @foreach ($station as $item)
                       <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->station_id }}</td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td>
-                      </tr>
+                     @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -122,42 +106,34 @@
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                   <div class="card-header card-header-warning">
-                    <h4 class="card-title">Employees Stats</h4>
-                    <p class="card-category">New employees on 15th September, 2016</p>
+                    <h4 class="card-title">Les employeurs</h4>
+                    <p class="card-category">Admin, Employeur, Stagiaire</p>
                   </div>
                   <div class="card-body table-responsive">
                     <table class="table table-hover">
                       <thead class="text-warning">
                         <th>ID</th>
                         <th>Name</th>
-                        <th>Salary</th>
-                        <th>Country</th>
+                        <th>E-mail</th>
+                        <th>Role</th>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Dakota Rice</td>
-                          <td>$36,738</td>
-                          <td>Niger</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Minerva Hooper</td>
-                          <td>$23,789</td>
-                          <td>Curaçao</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>Sage Rodriguez</td>
-                          <td>$56,142</td>
-                          <td>Netherlands</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>Philip Chaney</td>
-                          <td>$38,735</td>
-                          <td>Korea, South</td>
-                        </tr>
+                        @foreach ($admins as $item)
+                          <tr>
+                            <td>{{ $item->id }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>
+                              @if ($item->role_as == 1)
+                                  admin
+                                @elseif ($item->role_as == 3)
+                                  Employeur
+                                  @elseif ($item->role_as == 4)
+                                    Stagiaire
+                              @endif
+                            </td>
+                          </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>

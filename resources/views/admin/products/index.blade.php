@@ -69,6 +69,14 @@
                     </div>
                     <div class="row">
                       <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Fiche Technique</label>
+                          <input type="file" required name="fiche" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
                         <textarea name="description" id="" cols="30" rows="10"></textarea>
                       </div>
                     </div>
@@ -106,8 +114,10 @@
                               <img src="{{ asset('assets/uploads/products/images/'.$item->image) }}" class="cate-image" alt="image here">
                             </td>
                             <td>
+                              @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
                               <a href="{{ url('edit-prd/'.$item->id) }}" class="btn btn-primary pull-righ">Modifier</a>
                               <a href="{{ url('delete-prd/'.$item->id) }}" class="btn bg-danger pull-righ" style="color: white">Supprimer</a>
+                              @endif
                             </td>
                           </tr>
                         @endforeach

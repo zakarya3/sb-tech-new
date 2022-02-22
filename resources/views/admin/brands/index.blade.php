@@ -54,8 +54,10 @@
                                   <td>{{ $item->id }}</td>
                                   <td>{{ $item->brand_name }}</td>
                                   <td>
+                                    @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
                                     <a href="{{ url('edit-brand/'.$item->id) }}" class="btn btn-primary pull-righ">Modifier</a>
                                     <a href="{{ url('delete-brand/'.$item->id) }}" class="btn bg-danger pull-righ" style="color: white">Supprimer</a>
+                                    @endif
                                   </td>
                                 </tr>
                               @endforeach

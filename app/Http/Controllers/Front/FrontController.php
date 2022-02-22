@@ -37,6 +37,7 @@ class FrontController extends Controller
         }
     }
 
+
     public function filter($id)
     {
         $product = Product::where('brand_id',$id)->paginate(12);
@@ -71,7 +72,7 @@ class FrontController extends Controller
         $message1 = $request->message;
         $data = ['name'=> $name, 'phone'=> $phone, 'email'=> $email, 'subject'=> $subject, 'message1'=> $message1];
         Mail::send('message', $data, function ($message) use ($email) {
-            $message->to('zakaria.aanni@gmail.com');
+            $message->to('info@sbtech.ma');
             $message->subject('Question?');
         });
         return redirect()->back();
@@ -82,5 +83,23 @@ class FrontController extends Controller
         $cartItems = \Cart::getContent();
         $references = Reference::all();
         return view('references', compact('references', 'cartItems'));
+    }
+
+    public function pdf(Request $request)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $company = $request->company;
+        $data = ['name' => $name, 'company' => $company, 'email' => $email];
+        Mail::send('catalogue', $data, function ($message) use ($email) {
+            $message->to($email);
+        });
+
+        Mail::send('admin-cata', $data, function ($message) use ($email) {
+            $message->from($email);
+            $message->to('info@sbtech.ma');
+            $message->subject('Téléchargement du catalogue');
+        });
+        return redirect()->back();
     }
 }

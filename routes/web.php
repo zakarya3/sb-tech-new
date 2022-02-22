@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\RefController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Front\FrontController;
 use App\Http\Controllers\Front\UserController;
 use App\Http\Controllers\Cart\CartPController;
@@ -40,6 +41,8 @@ Route::post('update-cart', [CartPController::class, 'updateCart'])->name('cart.u
 Route::post('remove', [CartPController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartPController::class, 'clearAllCart'])->name('cart.clear');
 
+Route::put('search', [FrontController::class, 'search']);
+
 
 
 Auth::routes();
@@ -49,6 +52,8 @@ Route::post('place-order', [CheckoutController::class, 'placeorder']);
 Route::get('checkout-payment', [CheckoutController::class, 'index_pay']);
 Route::put('payment-method', [CheckoutController::class, 'paymentmethod']);
 Route::get('checkout-complete', [CheckoutController::class, 'index_comp']);
+
+Route::put('catalogue', [FrontController::class, 'pdf']);
 
 Route::get('myorders', [UserController::class, 'index']);
 Route::get('view-order/{id}', [UserController::class, 'view']);
@@ -91,6 +96,13 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('admin/view-order/{id}', [OrderController::class, 'view']);
     Route::put('update-order/{id}', [OrderController::class, 'updateorder']);
     Route::get('order-history', [OrderController::class, 'orderhistory']);
+
+    Route::get('users', [UsersController::class, 'index']);
+    Route::get('edit-usr/{id}', [UsersController::class, 'edit']);
+    Route::put('update-user/{id}', [UsersController::class, 'update']);
+    Route::get('delete-usr/{id}', [UsersController::class, 'destroy']);
+
+
 
 });
 

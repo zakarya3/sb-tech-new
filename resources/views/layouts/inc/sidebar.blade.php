@@ -9,12 +9,14 @@
       </a></div>
     <div class="sidebar-wrapper">
       <ul class="nav">
+        @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
         <li class="nav-item {{ Request::is('dashboard') ? 'active':'' }}  ">
           <a class="nav-link " href="/dashboard">
             <i class="material-icons">dashboard</i>
             <p>Dashboard</p>
           </a>
         </li>
+        @endif
         <li class="nav-item {{ Request::is('categories') ? 'active':'' }}">
           <a class="nav-link " href="{{ url('categories') }}">
             <i class="material-icons">category</i>
@@ -39,6 +41,7 @@
             <p>Produits</p>
           </a>
         </li>
+        @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
         <li class="nav-item {{ Request::is('reference') ? 'active':'' }}">
           <a class="nav-link" href="{{ 'reference' }}">
             <i class="material-icons">room_preferences</i>
@@ -51,18 +54,15 @@
             <p>Commandes</p>
           </a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="rtl.html">
-            <i class="material-icons">language</i>
-            <p>RTL Support</p>
+        @endif
+        @if (Auth::user()->role_as == 1)
+        <li class="nav-item {{ Request::is('users') ? 'active':'' }}">
+          <a class="nav-link" href="{{ 'users' }}">
+            <i class="material-icons">person</i>
+            <p>Utilisateurs</p>
           </a>
         </li>
-        <li class="nav-item active-pro ">
-          <a class="nav-link" href="upgrade.html">
-            <i class="material-icons">unarchive</i>
-            <p>Upgrade to PRO</p>
-          </a>
-        </li>
+        @endif
       </ul>
     </div>
   </div>

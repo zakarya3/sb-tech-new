@@ -61,8 +61,10 @@
                               {{ $item->name }}
                             </td>
                             <td>
-                                <a type="submit" class="btn btn-primary pull-right" href="{{ url('edit-type/'.$item->id) }}">Modifier</a>
-                                <a type="submit" class="btn bg-danger pull-right" style="color: white" href="{{ url('delete-type/'.$item->id) }}">Supprimer</a>
+                               @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
+                               <a type="submit" class="btn btn-primary pull-right" href="{{ url('edit-type/'.$item->id) }}">Modifier</a>
+                               <a type="submit" class="btn bg-danger pull-right" style="color: white" href="{{ url('delete-type/'.$item->id) }}">Supprimer</a>
+                               @endif
                             </td>
                           </tr>
                           @endforeach

@@ -5,10 +5,10 @@
         <nav class="container py-4 mb-lg-2 mt-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item">
-                    <a href="index-2.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+                    <a href="{{ url('/') }}"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="portfolio-grid.html">Products</a>
+                    <a href="">Produits</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $product->product_name }}</li>
             </ol>
@@ -98,12 +98,11 @@
                                     <div class="accordion-item">
                                         <h3 class="accordion-header"><a class="accordion-button collapsed"
                                                 href="#shippingOptions" role="button" data-bs-toggle="collapse"
-                                                aria-expanded="true" aria-controls="shippingOptions"><i
-                                                    class='bx bxs-truck'></i>Shipping options</a></h3>
+                                                aria-expanded="true" aria-controls="shippingOptions"><i class='bx bxs-cloud-download'></i>Fich Technique</a></h3>
                                         <div class="accordion-collapse collapse" id="shippingOptions"
                                             data-bs-parent="#productPanels">
                                             <div class="accordion-body fs-sm">
-                                                <p>livraison sous 2-5 Jours</p>
+                                                <a href="{{ url('assets/uploads/products/ficheTechnique/'.$product->fiche) }}" download>Télécharger</a>
                                             </div>
                                         </div>
                                     </div>

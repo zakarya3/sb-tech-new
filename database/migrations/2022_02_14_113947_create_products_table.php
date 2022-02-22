@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('product_description');
             $table->bigInteger('brand_id');
             $table->string('image');
+            $table->string('fiche');
             $table->string('qty');
             $table->string('product_reference');
             $table->float('price');

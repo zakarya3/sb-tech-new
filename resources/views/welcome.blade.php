@@ -520,17 +520,19 @@
             <div class="row pt-xl-3">
               <div class="col-md-5 text-center text-md-start pb-5">
                 <h1 class="mb-4">Télécharger notre catalogue produits</h1>
-                <form action="">
+                <form action="{{ url('catalogue') }}" method="post">
+                  @csrf
+                  @method('PUT')
                   <div class="form-floating mb-4">
-                    <input class="form-control" type="text" id="fl-text" placeholder="Your name">
+                    <input class="form-control" type="text" id="fl-text" name="name" required placeholder="Your name">
                     <label for="fl-text">Nom</label>
                   </div>
                   <div class="form-floating mb-4">
-                    <input class="form-control" type="email" id="fl-text" placeholder="Your name">
+                    <input class="form-control" type="email" id="fl-text" name="email" required placeholder="Your name">
                     <label for="fl-text">E-mail</label>
                   </div>
                   <div class="form-floating mb-4">
-                    <input class="form-control" type="text" id="fl-text" placeholder="Your name">
+                    <input class="form-control" type="text" id="fl-text" name="company" placeholder="Your name">
                     <label for="fl-text">Entreprise (facultatif)</label>
                   </div>
                   <button type="submit" class="btn btn-primary">Télécharger le catalogue</button>

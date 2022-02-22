@@ -18,6 +18,23 @@
                 <!-- Page title + Filters -->
                 <div class="d-lg-flex align-items-center justify-content-between py-4 mt-lg-2">
                   <h1 class="me-3">Produits</h1>
+                  <div class="d-md-flex mb-3">
+                    <select class="form-select me-md-4 mb-2 mb-md-0" name="choice" id="choice" style="min-width: 240px;">
+                      <option value="All">Tous les categories</option>
+                      @foreach ($category as $item)
+                        @foreach ($item->type as $items)
+                        <option value="Web Development">{{ $items->name }}</option>
+                        @endforeach
+                      @endforeach
+                    </select>
+                    <form action="" method="get" style="display: flex">
+                      <div class="position-relative" style="min-width: 300px;">
+                        <input type="text" name="search" id="search" class="form-control pe-5" placeholder="Search products">
+                        <i class="bx bx-search text-nav fs-lg position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                      </div>
+                      <button style="margin-left: 1em" type="submit" class="btn btn-primary">search</button>
+                    </form>
+                  </div>
                 </div>
                        <!-- Toolbar-->
                 <div class="bg-light shadow-lg rounded-3 p-4 mt-n5 mb-4" style="margin: .5em 0 3em 0 !important; ">

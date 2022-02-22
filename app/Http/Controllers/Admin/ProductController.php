@@ -30,6 +30,13 @@ class ProductController extends Controller
             $file->move('assets/uploads/products/images/',$filename);
             $products->image = $filename;
         }
+        if ($request->hasFile('fiche')) {
+            $file = $request->file('fiche');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move('assets/uploads/products/ficheTechnique/',$filename);
+            $products->fiche = $filename;
+        }
         $products->cate_id = $request->input('cate_id');
         $products->brand_id = $request->input('brand');
         $products->product_name = $request->input('title');
@@ -62,6 +69,17 @@ class ProductController extends Controller
             $file->move('assets/uploads/products/images/',$filename);
             $products->image = $filename;
         }
+        if ($request->hasFile('fiche')) {
+            $path = 'assets/uploads/products/ficheTechnique/'.$products->fiche;
+            if (File::exists($path)) {
+                File::delete($path);
+            }
+            $file = $request->file('fiche');
+            $ext = $file->getClientOriginalExtension();
+            $filename = time().'.'.$ext;
+            $file->move('assets/uploads/products/ficheTechnique/',$filename);
+            $products->fiche = $filename;
+        }
         if ($request->hasFile('brand')) {
             $path = 'assets/uploads/products/brands/'.$products->product_brand;
             if (File::exists($path)) {
@@ -89,6 +107,10 @@ class ProductController extends Controller
         $path = 'assets/uploads/products/images/'.$products->image;
         if (File::exists($path)) {
             File::delete($path);
+        }
+        $pathf = 'assets/uploads/products/ficheTechnique/'.$products->fiche;
+        if (File::exists($pathf)) {
+            File::delete($pathf);
         }
         $path1 = 'assets/uploads/products/brands/'.$products->product_brand;
         if (File::exists($path1)) {

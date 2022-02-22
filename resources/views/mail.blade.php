@@ -198,10 +198,10 @@ a[x-apple-data-detectors='true'] {
     <div style="border-collapse: collapse;display: table;width: 100%;background-color: transparent;">
       <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: #d9eef8;"><![endif]-->
       
-<!--[if (mso)|(IE)]><td align="center" width="598" style="background-color: #f8f8f8;width: 598px;padding: 0px;border-top: 0px solid transparent;border-left: 1px solid #2cb4f3;border-right: 1px solid #2cb4f3;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+<!--[if (mso)|(IE)]><td align="center" width="598" style="background-color: #fff;width: 598px;padding: 0px;border-top: 0px solid transparent;border-left: 1px solid #2cb4f3;border-right: 1px solid #2cb4f3;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
-  <div style="background-color: #f8f8f8;width: 100% !important;">
-  <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 1px solid #2cb4f3;border-right: 1px solid #2cb4f3;border-bottom: 0px solid transparent;"><!--<![endif]-->
+  <div style="background-color: #fff;width: 100% !important;">
+  <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;"><!--<![endif]-->
   
 <table id="u_content_text_87" style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
@@ -209,7 +209,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:30px 10px 10px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #34495e; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong><span style="font-family: Montserrat, sans-serif; line-height: 22.4px; font-size: 16px;">{{ $user_name }},</span></strong></span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong><span style="font-family: Montserrat, sans-serif; line-height: 22.4px; font-size: 16px;">Bonjour {{ $user_name }},</span></strong></span></p>
   </div>
 
       </td>
@@ -223,7 +223,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 10px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #34495e; line-height: 150%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">&nbsp;This is just to remind you that payment on<strong><span style="color: #e67e23; font-size: 16px; line-height: 24px;"> <span style="font-size: 18px; line-height: 27px;">invoice {{ $trackin }}</span></span></strong>, which we sent on March 25th, will be due next week.</span></span></p>
+    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">&nbsp;Merci d'avoir effectué vos achats sur SB-TECH !</span></span></p>
   </div>
 
       </td>
@@ -237,7 +237,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 30px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #34495e; line-height: 150%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">I&rsquo;m sure you&rsquo;re busy, but I&rsquo;d appreciate if you could take a moment and look over the invoice when you get a chance. Please let me know if you have any questions.</span></span></p>
+    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">Votre commande : <strong><span style="color: #e67e23; font-size: 16px; line-height: 24px;"> <span style="font-size: 18px; line-height: 27px;">invoice {{ $trackin }}</span></span></strong></span></span></p>
   </div>
 
       </td>
@@ -272,7 +272,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:30px 10px 10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <h1 class="v-text-align" style="margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-weight: normal; font-family: 'Montserrat',sans-serif; font-size: 22px;">
-    <strong>INVOICE</strong>
+    <strong>{{ $trackin }}</strong>
   </h1>
 
       </td>
@@ -381,7 +381,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 10px 10px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #b2b0b0; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Billed To </span></strong></p>
+    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Facturé à </span></strong></p>
   </div>
 
       </td>
@@ -418,7 +418,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 10px 5px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #b2b0b0; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Invoice Number</span></strong></p>
+    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Numéro de suivi</span></strong></p>
   </div>
 
       </td>
@@ -446,7 +446,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 5px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #b2b0b0; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Date Of Issue</span></strong></p>
+    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Date d'Emission</span></strong></p>
   </div>
 
       </td>
@@ -483,7 +483,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:20px 15px 5px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #b2b0b0; line-height: 140%; text-align: right; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Invoice Total</span></strong></p>
+    <p style="font-size: 14px; line-height: 140%;"><strong><span style="font-size: 16px; line-height: 22.4px;">Prix Total</span></strong></p>
   </div>
 
       </td>
@@ -573,7 +573,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 10px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #f48634; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Description </strong></span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Nom du produit </strong></span></p>
   </div>
 
       </td>
@@ -596,7 +596,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #f48634; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Unit Cost </strong></span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Coût unitaire </strong></span></p>
   </div>
 
       </td>
@@ -619,7 +619,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #f48634; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Qty / Hr Rate </strong></span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Quantité </strong></span></p>
   </div>
 
       </td>
@@ -642,7 +642,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:10px 15px 10px 10px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #f48634; line-height: 140%; text-align: right; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Amount</strong></span></p>
+    <p style="font-size: 14px; line-height: 140%;"><span style="font-size: 16px; line-height: 22.4px;"><strong>Montant</strong></span></p>
   </div>
 
       </td>
@@ -1037,7 +1037,7 @@ a[x-apple-data-detectors='true'] {
 <!--[if (mso)|(IE)]><td align="center" width="598" style="width: 598px;padding: 0px;border-top: 0px solid transparent;border-left: 1px solid #2cb4f3;border-right: 1px solid #2cb4f3;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
 <div class="u-col u-col-100" style="max-width: 320px;min-width: 600px;display: table-cell;vertical-align: top;">
   <div style="width: 100% !important;">
-  <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;border-top: 0px solid transparent;border-left: 1px solid #2cb4f3;border-right: 1px solid #2cb4f3;border-bottom: 0px solid transparent;"><!--<![endif]-->
+  <!--[if (!mso)&(!IE)]><!--><div style="padding: 0px;"><!--<![endif]-->
   
 @if ($choice == 0)
 <table id="u_content_text_2" style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
@@ -1095,7 +1095,7 @@ a[x-apple-data-detectors='true'] {
       <td class="v-container-padding-padding" style="overflow-wrap:break-word;word-break:break-word;padding:0px 10px 30px 15px;font-family:'Montserrat',sans-serif;" align="left">
         
   <div class="v-text-align" style="color: #34495e; line-height: 150%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">Si vous avez un compte invité, vous pouvez suivre votre commande via la section <a href="http://www.sbtech.ma/view" style="font-weight: 600;color: #e67e23">Suivi de commande</a> sur notre boutique.</span></span></p>
+    <p style="font-size: 14px; line-height: 150%;"><span style="font-family: Lato, sans-serif; font-size: 14px; line-height: 21px;"><span style="font-size: 16px; line-height: 24px;">Si vous avez un compte invité, vous pouvez suivre votre commande via la section <a href="{{ url('ttps://www.sbtech.ma/view-order/'.$id) }}" style="font-weight: 600;color: #e67e23">Suivi de commande</a> sur notre boutique.</span></span></p>
   </div>
 
       </td>
@@ -1149,43 +1149,9 @@ a[x-apple-data-detectors='true'] {
   
     
     <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://twitter.com/" title="Twitter" target="_blank">
-          <img src="images/image-1.png" alt="Twitter" title="Twitter" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
+
     <!--[if (mso)|(IE)]></td><![endif]-->
     
-    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://linkedin.com/" title="LinkedIn" target="_blank">
-          <img src="images/image-3.png" alt="LinkedIn" title="LinkedIn" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 10px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 10px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://instagram.com/" title="Instagram" target="_blank">
-          <img src="images/image-2.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
-    <!--[if (mso)|(IE)]></td><![endif]-->
-    
-    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 0px;" valign="top"><![endif]-->
-    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;margin-right: 0px">
-      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
-        <a href="https://vimeo.com/" title="Vimeo" target="_blank">
-          <img src="images/image-5.png" alt="Vimeo" title="Vimeo" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
-        </a>
-      </td></tr>
-    </tbody></table>
     <!--[if (mso)|(IE)]></td><![endif]-->
     
     
