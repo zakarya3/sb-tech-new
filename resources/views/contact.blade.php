@@ -6,7 +6,7 @@
     <nav class="pt-4 mt-lg-3" aria-label="breadcrumb">
       <ol class="breadcrumb mb-0">
         <li class="breadcrumb-item">
-          <a href="index.html"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
+          <a href="{{ url('/') }}"><i class="bx bx-home-alt fs-lg me-1"></i>Accueil</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Contact</li>
       </ol>
@@ -66,7 +66,7 @@
             <a href="tel:+212 528217355" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxs-phone me-2'></i>+212 528 217 355</a>
           </li>
           <li class="mb-3 mb-lg-4">
-            <a href="tel:++212 661461155" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
+            <a href="tel:+212 661461155" class="nav-link d-inline-block fs-lg p-0"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
           </li>
           <li class="mb-3 mb-lg-4">
             <div class="text-nav fs-lg fw-medium">Bureau N 1 .Av Prince Abdelkader N 78 Cite Almassira Agadir</div>

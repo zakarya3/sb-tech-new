@@ -33,7 +33,7 @@
                             </p>
                           </div>
                           <div class="scale-up delay-1">
-                            <a href="#" class="btn btn-primary shadow-primary btn-lg">En
+                            <a href="{{ url('contact') }}" class="btn btn-primary shadow-primary btn-lg">En
                               savoir plus sur nous</a>
                           </div>
                         </div>
@@ -64,7 +64,7 @@
                   et des délais de livraison qui défient tous les concurrents et en
                   utilisant toutes leurs expertises pour répondre à vos besoins.
                 </p>
-                <a href="about-v2.html" class="btn btn-primary shadow-primary btn-lg">En savoir plus sur
+                <a href="{{ url('contact') }}" class="btn btn-primary shadow-primary btn-lg">En savoir plus sur
                   nous</a>
               </div>
               <div class="col-xl-6 col-md-7 offset-xl-1 pb-4 pb-sm-3 pb-lg-0 mb-4
@@ -79,7 +79,7 @@
             <div class="d-none d-lg-block" style="margin-top: -60px; padding-top: 60px"></div>
             <div class="container pb-4 pt-5">
               <h2 class="h1 text-center text-md-start mb-lg-4 pt-1 pt-md-4">
-                Nos Services
+                Nos domaines d'activités
               </h2>
               <div class="row align-items-center pb-5 mb-lg-2">
                 <div class="col-md-8 text-center text-md-start">
@@ -91,13 +91,13 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-center
                     justify-content-md-end">
-                  <a href="services.html" class="btn btn-outline-primary btn-lg">Contactez-nous</a>
+                  <a href="{{ url('contact') }}" class="btn btn-outline-primary btn-lg">Contactez-nous</a>
                 </div>
               </div>
               <div class="row row-cols-1 row-cols-md-2">
                 <!-- Item -->
                 <div class="col py-4 my-2 my-sm-3">
-                  <a href="services-single.html" class="card card-hover h-100 border-0 shadow-sm
+                  <a href="" class="card card-hover h-100 border-0 shadow-sm
                       text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3
                       pb-md-0 pb-lg-3 me-xl-2">
                     <div class="card-body pt-3">
@@ -128,7 +128,7 @@
       
                 <!-- Item -->
                 <div class="col py-4 my-2 my-sm-3">
-                  <a href="services-single.html" class="card card-hover h-100 border-0 shadow-sm
+                  <a href="" class="card card-hover h-100 border-0 shadow-sm
                       text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3
                       pb-md-0 pb-lg-3 ms-xl-2">
                     <div class="card-body pt-3">
@@ -156,7 +156,7 @@
       
                 <!-- Item -->
                 <div class="col py-4 my-2 my-sm-3">
-                  <a href="services-single.html" class="card card-hover h-100 border-0 shadow-sm
+                  <a href="" class="card card-hover h-100 border-0 shadow-sm
                       text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3
                       pb-md-0 pb-lg-3 ms-xl-2">
                     <div class="card-body pt-3">
@@ -185,7 +185,7 @@
       
                 <!-- Item -->
                 <div class="col py-4 my-2 my-sm-3">
-                  <a href="services-single.html" class="card card-hover h-100 border-0 shadow-sm
+                  <a href="" class="card card-hover h-100 border-0 shadow-sm
                       text-decoration-none pt-5 px-sm-3 px-md-0 px-lg-3 pb-sm-3
                       pb-md-0 pb-lg-3 ms-xl-2">
                     <div class="card-body pt-3">
@@ -222,10 +222,6 @@
                   <p class="fs-lg text-muted mb-md-0">
                     SB-TECH vous offre une large gamme de choix de matériels.
                   </p>
-                </div>
-                <div class="col-md-4 col-lg-5 col-xl-6 d-flex justify-content-center
-                    justify-content-md-end">
-                  <a href="#" class="btn btn-outline-primary btn-lg">Les Produits</a>
                 </div>
               </div>
             </div>
@@ -309,7 +305,7 @@
                                 besoins usuels pour la constitution de votre
                                 tableau.
                               </p>
-                              <a href="#" class="btn btn-primary">View</a>
+                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
       
                             <!-- Item -->
@@ -323,7 +319,7 @@
                                 aux demandes d'informations dans le cadre d'un
                                 environnement sur et sécurisé.
                               </p>
-                              <a href="#" class="btn btn-primary">View</a>
+                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
                             <!-- Item -->
                             <div class="swiper-slide" data-swiper-tab="#image-3">
@@ -343,7 +339,7 @@
                                 pharmaceutique, secteur automobile, plasturgie ou
                                 encore pour le photovoltaique et l'énergie solaire.
                               </p>
-                              <a href="#" class="btn btn-primary">View</a>
+                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
                             <!-- Item -->
                             <div class="swiper-slide" data-swiper-tab="#image-4">
@@ -359,7 +355,7 @@
                                 pression, filtres régulateurs lubrificateurs,
                                 capteurs, connecteurs...
                               </p>
-                              <a href="#" class="btn btn-primary">View</a>
+                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
                             <!-- Item -->
                             <div class="swiper-slide" data-swiper-tab="#image-5">
@@ -380,7 +376,7 @@
                                 santé, agriculture, militaire, centres commerciaux,
                                 etc...
                               </p>
-                              <a href="#" class="btn btn-primary">View</a>
+                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
                           </div>
                         </div>
@@ -422,7 +418,7 @@
                 <div class="d-table bg-light rounded-circle shadow-sm p-3 mx-auto mb-4">
                   <img src="assets/img/icons/03.svg" width="32" alt="Icon" />
                 </div>
-                <h3 class="h5 mb-2 mb-lg-0">Etude, planification, estimation du budget de telles opérations.</h3>
+                <h3 class="h5 mb-2 mb-lg-0">Etude, planification, estimation du budget.</h3>
               </div>
               <div class="col text-center">
                 <div class="d-table bg-light rounded-circle shadow-sm p-3 mx-auto mb-4">
@@ -449,52 +445,33 @@
                 <!-- Item -->
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
-                    <img src="assets/img/brands/swissysteme.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
+                    <img src="assets/img/brands/Schneider.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
                   </a>
                 </div>
-      
                 <!-- Item -->
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
                     <img src="assets/img/brands/Siemens.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
                   </a>
                 </div>
-      
-                <!-- Item -->
-                <div class="swiper-slide py-3">
-                  <a href="#" class="card card-body card-hover px-2 mx-2">
-                    <img src="assets/img/brands/vidka.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
-                  </a>
-                </div>
-      
                 <!-- Item -->
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
                     <img src="assets/img/brands/ABB.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
                   </a>
                 </div>
-      
+               <!-- Item -->
+                <div class="swiper-slide py-3">
+                  <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="assets/img/brands/maxwell.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
+                  </a>
+                </div>
                 <!-- Item -->
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
                     <img src="assets/img/brands/Fanuc.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
                   </a>
                 </div>
-      
-                <!-- Item -->
-                <div class="swiper-slide py-3">
-                  <a href="#" class="card card-body card-hover px-2 mx-2">
-                    <img src="assets/img/brands/maxwell.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
-                  </a>
-                </div>
-      
-                <!-- Item -->
-                <div class="swiper-slide py-3">
-                  <a href="#" class="card card-body card-hover px-2 mx-2">
-                    <img src="assets/img/brands/Schneider.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
-                  </a>
-                </div>
-      
                 <!-- Item -->
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
@@ -506,6 +483,18 @@
                 <div class="swiper-slide py-3">
                   <a href="#" class="card card-body card-hover px-2 mx-2">
                     <img src="assets/img/brands/Nexans.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
+                  </a>
+                </div>
+                <!-- Item -->
+                <div class="swiper-slide py-3">
+                  <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="assets/img/brands/swissysteme.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
+                  </a>
+                </div>   
+                <!-- Item -->
+                <div class="swiper-slide py-3">
+                  <a href="#" class="card card-body card-hover px-2 mx-2">
+                    <img src="assets/img/brands/vidka.png" style="height: 8vh; object-fit: contain;" class="d-block mx-auto my-2" width="200" alt="Brand" />
                   </a>
                 </div>
               </div>

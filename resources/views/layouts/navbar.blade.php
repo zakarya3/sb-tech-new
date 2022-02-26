@@ -211,7 +211,7 @@
                 <a href="{{ url('contact') }}" class="nav-link" >Contactez-nous</a>
               </li>
               <li class="nav-item">
-                <a href="{{ url('overview') }}" class="nav-link">Could</a>
+                <a href="{{ url('overview') }}" class="nav-link">Cloud</a>
               </li>
               <li class="nav-item">
                 <a href="{{ url('myorders') }}" class="nav-link">Mes commandes</a>
@@ -310,9 +310,6 @@
                   <a href="{{ url('/') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Accueil</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url('contact') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Contactez-nous!!</a>
-                </li>
-                <li class="nav-item">
                   <a href="{{ url('references') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
@@ -321,31 +318,25 @@
               </ul>
             </div>
           </div>
-          <div class="col-xl-4 col-lg-3">
-            <h6 class="mb-2">
-              <a href="#social-links" class="d-block text-dark dropdown-toggle d-lg-none py-2"
-                data-bs-toggle="collapse">Socials</a>
-            </h6>
-            <div id="social-links" class="collapse d-lg-block" data-bs-parent="#footer-links">
-              <ul class="nav flex-column mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-linkedin"></i></a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-facebook"></i></a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-instagram"></i></a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-gmail"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div class="col-xl-4 col-lg-5 pt-2 pt-lg-0">
             <h6 class="mb-2">Contact Us</h6>
-            <a href="mailto:info@sbtech.ma" class="fw-medium"><i class="bx bxl-gmail"></i> info@sbtech.ma</a>
+            <ul class="nav flex-column mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a href="mailto:info@sbtech.ma" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-gmail me-2"></i>  info@sbtech.ma </a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.facebook.com/sbtechautomation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-facebook me-2"></i>SB TECH automation</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.instagram.com/sbtech_automation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-instagram me-2"></i>sbtech_automation</a>
+              </li>
+              <li class="nav-item">
+                <a href="tel:+212 661461155" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
+              </li>
+              <li class="nav-item">
+                <a href="https://www.linkedin.com/company/sbtech-automation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-linkedin me-2"></i>SB-TECH</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
