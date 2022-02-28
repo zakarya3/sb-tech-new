@@ -1,6 +1,12 @@
 @extends('layouts.navbar')
 @section('content')
     
+<style>
+table, th, td {
+    width: 100% !important;
+  border: 1px solid;
+}
+</style>
         <!-- Breadcrumb -->
         <nav class="container py-4 mb-lg-2 mt-lg-3" aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
@@ -49,7 +55,11 @@
                         <!-- Product details-->
                         <div class="col-lg-5 pt-4 pt-lg-0">
                             <div class="product-details ms-auto pb-3">
+                                @if ($product->price != NULL)
                                 <div class="mb-3"><span class="h3 fw-normal text-accent me-1">{{ $product->price }}<small>MAD</small></span></div>
+                                @else
+                                <div class="mb-3"><span class="h3 fw-normal text-accent me-1">{{ $product->price }}<small>Contactez-nos</small></span></div>
+                                @endif
                                 @if ($product->qty > 0)
                                 <label for="" class="badge bg-success">In stock</label>
                                 <input type="hidden" value="{{ $product->id }}" class="prod_id">
@@ -72,7 +82,11 @@
                                       <input type="hidden" value="{{ $product->image }}"  name="image">
                                       <input type="hidden" class="qty-input form-control" name="quantity">
                                       <input type="hidden" value="{{ $product->qty }}"  name="qty">
+                                      @if ($product->price != NULL)
                                       <button class="btn btn-primary btn-shadow d-block w-100" type="submit"><i class='bx bx-cart'></i>Add to Cart</button>
+                                      @else
+                                      <a href="{{ url('/contact') }}" class="btn btn-primary btn-shadow d-block w-100" type="submit">Contacter-nous</a>
+                                      @endif
                                     </form>
                                   </div>
                                 </div>

@@ -105,7 +105,11 @@
                                 <a href="{{ url('product/'.$item->category->name.'/'.$item->product_name) }}">{{ $item->product_name }}</a>
                                 </h3>
                                 <p class="fs-sm mb-2">{{ $item->category->name }}</p>
+                                @if ($item->price != NULL)
                                 <p class="fs-lg fw-semibold text-primary mb-0">{{ $item->price }} <small>MAD</small></p>
+                                @else
+                                <p class="fs-lg fw-semibold text-primary mb-0">Contactez-nous</p>
+                                @endif
                             </div>
                             <div class="card-footer d-flex align-items-center fs-sm text-muted py-4">
                               <form action="{{ route('cart.store') }}" style="width: 100%" method="post" enctype="multipart/form-data">
@@ -115,7 +119,11 @@
                                 <input type="hidden" value="{{ $item->price }}" name="price">
                                 <input type="hidden" value="{{ $item->image }}"  name="image">
                                 <input type="hidden" value="1" name="quantity">
-                                <button class="btn btn-primary btn-shadow d-block w-100" type="submit"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i> Add to Cart</button>
+                                @if ($item->price != NULL)
+                                <button class="btn btn-primary btn-shadow d-block w-100" type="submit"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i> Ajouter au panier</button>
+                                @else
+                                <a href="{{ url('/contact') }}" class="btn btn-primary btn-shadow d-block w-100" type="submit">Contactez-nous</a>
+                                @endif
                               </form>
                               </div>
                             </article>

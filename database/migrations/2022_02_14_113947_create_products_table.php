@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('cate_id');
             $table->string('product_name');
-            $table->text('product_description');
+            $table->text('product_description')->nullable();
             $table->bigInteger('brand_id');
             $table->string('image');
             $table->string('fiche');
             $table->string('qty');
             $table->string('product_reference');
-            $table->float('price');
+            $table->float('price')->nullable();
             $table->timestamps();
         });
     }

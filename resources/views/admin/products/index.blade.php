@@ -24,7 +24,7 @@
                     <div class="row">
                       <label for="">Marque</label>
                       <select class="form-select" required name="brand">
-                          <option value="">Select a category</option>
+                          <option value="">Select a brand</option>
                           @foreach ($brand as $item)
                           <option value="{{ $item->id }}">{{ $item->brand_name }}</option>
                           @endforeach
@@ -49,7 +49,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Prix</label>
-                          <input type="number" name="price" required class="form-control">
+                          <input type="number" name="price" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
