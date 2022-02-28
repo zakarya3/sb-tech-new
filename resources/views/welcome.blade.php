@@ -1,52 +1,84 @@
 @extends('layouts.navbar')
 @section('content')
+<style>
+  .video-top {
+  position: relative;
+  background-color: black;
+  height: 70vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-top video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-top .container {
+  position: relative;
+  z-index: 2;
+}
+
+.video-top .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Media Query for devices withi coarse pointers and no hover functionality */
+
+/* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+
+@media (pointer: coarse) and (hover: none) {
+  .video-top {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+
+  .video-top video {
+    display: none;
+  }
+}
+
+</style>
         <!-- Hero slider + BG parallax -->
-        <section class="jarallax dark-mode bg-dark py-xxl-5" style="height: 100vh" data-jarallax data-speed="0.4">
-            <span class="position-absolute top-0 start-0 w-100 h-100
-                bg-gradient-dark-translucent"></span>
-            <div class="jarallax-img" style="background-image: url(assets/img/pictures/landing.jpg)"></div>
-            <div class="position-relative text-center zindex-5 overflow-hidden pt-4
-                py-md-5" style="height: 100% !important">
-              <!-- Slider -->
-              <div class="container text-center py-xl-5">
-                <div class="row justify-content-center pt-lg-5">
-                  <div class="col-xl-8 col-lg-9 col-md-10 col-11">
-                    <div class="swiper pt-5 pb-4 py-md-5" data-swiper-options='{"effect" :"fade" ,"speed" : 500,"autoplay"
-                        : {"delay" : 5500,"disableOnInteraction" : false
-                        },"pagination" : {"el" :".swiper-pagination" ,"clickable" :
-                        true
-                        },"navigation" : {"prevEl" :"#hero-prev" ,"nextEl" :"#hero-next"
-                        }
-                        }'>
-                      <div class="swiper-wrapper">
-                        <!-- Item -->
-                        <div class="swiper-slide">
-                          <h2 class="display-2 from-start mb-lg-4">
-                            Materiel Et Fourniture Industrielle
-                          </h2>
-                          <div class="from-end">
-                            <p class="fs-xl text-light opacity-70 pb-2 mb-lg-5">
-                              SB-TECH, la spécialiste dans l'importation et la
-                              fourniture de tous matériels industriels conformément
-                              aux normes, propose une large gamme de choix de
-                              fournitures industrielles.
-                            </p>
-                          </div>
-                          <div class="scale-up delay-1">
-                            <a href="{{ url('contact') }}" class="btn btn-primary shadow-primary btn-lg">En
-                              savoir plus sur nous</a>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <!-- Pagination (bullets) -->
-                      <div class="swiper-pagination position-relative d-md-none pt-2
-                          mt-5"></div>
-                    </div>
-                  </div>
-                </div>
+        <section class="jarallax dark-mode bg-dark py-xxl-5 video-top" style="height: 85vh" data-jarallax data-speed="0.4">
+          <div class="overlay"></div>
+
+          <!-- The HTML5 video element that will create the background video on the header -->
+          <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+          </video>
+        
+          <!-- The header content -->
+          <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+              <div class="w-100 text-white">
+                <h1 class="display-3">Materiel Et Fourniture Industrielle</h1>
+                <p class="lead mb-0">
+                  SB-TECH, la spécialiste dans l'importation et la
+                  fourniture de tous matériels industriels conformément
+                  aux normes, propose une large gamme de choix de
+                  fournitures industrielles.
+                </p>
               </div>
             </div>
+          </div>
           </section>
       
           <!-- About -->
