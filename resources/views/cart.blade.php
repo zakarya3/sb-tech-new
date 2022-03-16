@@ -73,7 +73,7 @@
                       <div class="py-2 px-xl-2">
                         <div class="text-center mb-4 pb-3 border-bottom">
                           <h2 class="h6 mb-3 pb-1">{{ Cart::getTotalQuantity()}} articles</h2>
-                          <h3 class="fw-normal">{{ $total }}<small>00 MAD</small></h3>
+                          <h3 class="fw-normal">{{ $total }}.<small>00 MAD</small></h3>
                         </div>
                         <div class="accordion" id="order-options">
                           <div class="accordion-item">

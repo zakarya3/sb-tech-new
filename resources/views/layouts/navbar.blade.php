@@ -21,8 +21,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon and Touch Icons -->
   <link rel="shortcut icon" href="{{ asset('assets/img/logo/logosvg.svg') }}" type="image/svg" />
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome.min.css') }}">
 
   <meta name="theme-color" content="#ffffff" />
 
@@ -357,7 +357,7 @@
 </a>
 
 <!-- Vendor Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{ asset('frontend/js/jquery.js') }}"></script>
 <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('frontend/js/smooth-scroll.polyfills.min.js') }}"></script>
 <script src="{{ asset('frontend/js/swiper-bundle.min.js') }}"></script>
