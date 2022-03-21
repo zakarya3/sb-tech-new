@@ -47,7 +47,7 @@
 
 @media (pointer: coarse) and (hover: none) {
   .video-top {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    /* background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll; */
   }
 
   .video-top video {
@@ -62,7 +62,7 @@
 
           <!-- The HTML5 video element that will create the background video on the header -->
           <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            {{-- <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4"> --}}
           </video>
         
           <!-- The header content -->
@@ -265,27 +265,20 @@
                     swiper-tab active" data-jarallax data-speed="0.4">
                   <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark
                       opacity-35"></span>
-                  <div class="jarallax-img" style="background-image: url(assets/img/pictures/elect.jpg)"></div>
+                  <div class="jarallax-img" style="background-image: url(assets/img/pictures/electrique.jpg)"></div>
                 </div>
                 <div id="image-2" class="jarallax position-absolute top-0 start-0 w-100 h-100
                     swiper-tab" data-jarallax data-speed="0.4">
                   <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark
                       opacity-35"></span>
                   <div class="jarallax-img" style="background-image:
-                      url(assets/img/pictures/industrial-worker-working-production-line-factory.jpg);"></div>
+                      url(assets/img/pictures/instrumentation.jpg);"></div>
                 </div>
                 <div id="image-3" class="jarallax position-absolute top-0 start-0 w-100 h-100
                     swiper-tab" data-jarallax data-speed="0.4">
                   <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark
                       opacity-35"></span>
-                  <div class="jarallax-img" style="background-image: url(assets/img/pictures/robotic.jpg);"></div>
-                </div>
-                <div id="image-4" class="jarallax position-absolute top-0 start-0 w-100 h-100
-                    swiper-tab" data-jarallax data-speed="0.4">
-                  <span class="position-absolute top-0 start-0 w-100 h-100 bg-dark
-                      opacity-35"></span>
-                  <div class="jarallax-img" style="background-image:
-                      url(assets/img/pictures/portrait-young-worker-hard-hat-large-metalworking-plant.jpg);"></div>
+                  <div class="jarallax-img" style="background-image: url(assets/img/pictures/robotique.jpg);"></div>
                 </div>
                 <div id="image-5" class="jarallax position-absolute top-0 start-0 w-100 h-100
                     swiper-tab" data-jarallax data-speed="0.4">
@@ -346,10 +339,7 @@
                               <h3 class="mb-2">Instrumentation & Régulation</h3>
                               <p class="fs-sm text-muted border-bottom pb-3 mb-3"></p>
                               <p class="pb-2 pb-lg-3 mb-3">
-                                SB-TECH met à votre disposition offre des capacités
-                                de connectivité permettant de réagir plus rapidement
-                                aux demandes d'informations dans le cadre d'un
-                                environnement sur et sécurisé.
+                                La majorité des processus industriels nécessitent le contrôle d’un certain nombre de grandeurs physiques telles que la température, la pression, le niveau, le débit, le pH, la concentration, etc pour cela SB-TECH vous offre une large gamme de choix de haute qualité des instruments pour un bon processus .
                               </p>
                               <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>
@@ -370,22 +360,6 @@
                                 d'application: agroalimentaire, biotechnologie et
                                 pharmaceutique, secteur automobile, plasturgie ou
                                 encore pour le photovoltaique et l'énergie solaire.
-                              </p>
-                              <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
-                            </div>
-                            <!-- Item -->
-                            <div class="swiper-slide" data-swiper-tab="#image-4">
-                              <img src="assets/img/icons/hydraulic.png" class="d-block mb-3" width="72" alt="Logo" />
-                              <h3 class="mb-2">Hydrailique & Pneumatique</h3>
-                              <p class="fs-sm text-muted border-bottom pb-3 mb-3"></p>
-                              <p class="pb-2 pb-lg-3 mb-3">
-                                Grace à notre gamme de composants pneumatique, nous
-                                couvrirons toutes les exigences dans le domaine de
-                                l'automatisation industrielle : vérins double effet,
-                                vérins cylindriques, vérins carrés, vérins compacts,
-                                distributeurs, électrovannes, régulateurs de
-                                pression, filtres régulateurs lubrificateurs,
-                                capteurs, connecteurs...
                               </p>
                               <a href="{{ url('contact') }}" class="btn btn-primary">Plus de détails</a>
                             </div>

@@ -229,9 +229,17 @@
           <i class="fas fa-bars" style="width: 100%"></i>
         </button>
         <div class="navbar-tool dropdown ms-3">
-          <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="{{ url('cart') }}"><span
+          <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" @if (Cart::getTotalQuantity()!=0)
+							href="{{ url('cart') }}" 
+						@else
+							href="{{ url('/') }}"
+						@endif"><span
               class="navbar-tool-label">{{ Cart::getTotalQuantity()}}</span><i class="fas fa-shopping-cart"></i></a><a class="navbar-tool-text"
-            href="{{ url('cart') }}"></a>
+            @if (Cart::getTotalQuantity()!=0)
+							href="{{ url('cart') }}" 
+						@else
+							href="{{ url('/') }}"
+						@endif"></a>
           <!-- Cart dropdown-->
           <div class="dropdown-menu dropdown-menu-end">
             <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem">
@@ -322,7 +330,7 @@
             <h6 class="mb-2">Contact Us</h6>
             <ul class="nav flex-column mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="mailto:info@sbtech.ma" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-gmail me-2"></i>  info@sbtech.ma </a>
+                <a href="mailto:info@sbtech.ma" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class='bx bxs-envelope me-2'></i>  info@sbtech.ma </a>
               </li>
               <li class="nav-item">
                 <a href="https://www.facebook.com/sbtechautomation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-facebook me-2"></i>SB TECH automation</a>
