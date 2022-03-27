@@ -14133,7 +14133,7 @@ a.nav-link:hover .media-tab-media {
     font-weight: 500;
 }
 .navbar-nav .dropdown-menu {
-    min-width: 12.5rem;
+    min-width: 20rem;
     padding-top: 0;
     box-shadow: none;
     border: none;
