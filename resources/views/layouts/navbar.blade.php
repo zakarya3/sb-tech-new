@@ -191,21 +191,19 @@
                 <a href="{{ url('/') }}" class="nav-link">Accueil</a>
               </li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Produits <i class='bx bx-chevron-down'></i></a>
-                <div class="dropdown-menu">
-                  <div class="d-lg-flex pt-lg-3">
-                    <div class="mega-dropdown-column">
-                      @foreach ($category as $item)
-                      <h6 class="px-3 mb-2">{{ $item->name }}</h6>
-                      <ul class="list-unstyled mb-3">
-                        @foreach ($item->type as $items)
-                          <li><a href="{{ url('products-items/'.$items->name) }}" class="dropdown-item py-1">{{ $items->name }}</a></li>
-                        @endforeach
-                      </ul>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produits <i class='bx bx-chevron-down'></i></a>
+                <ul class="dropdown-menu">
+                  @foreach ($category as  $item)
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ $item->name }} <i class='bx bx-chevron-right'></i></a>
+                    <ul class="dropdown-menu">
+                      @foreach ($item->type as $items)
+                      <li><a class="dropdown-item" href="{{ url('products-items/'.$items->name) }}">{{ $items->name }}</a></li>
                       @endforeach
-                    </div>
-                  </div>
-                </div>
+                    </ul>
+                  </li>
+                  @endforeach
+                </ul>
               </li>
               <li class="nav-item ">
                 <a href="{{ url('contact') }}" class="nav-link" >Contactez-nous</a>
