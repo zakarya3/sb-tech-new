@@ -16,8 +16,8 @@
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   -ms-transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
@@ -47,22 +47,28 @@
 
 @media (pointer: coarse) and (hover: none) {
   .video-top {
-    /* background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll; */
+    /* background: url({{ asset('cloud/images/Electric Grippers Replacement.mp4') }}) black no-repeat center center scroll; */
+    height: 34vh !important;
+    width: 100%;
+    
   }
 
-  .video-top video {
+  /* .video-top video {
+    display: none;
+  } */
+  .text-white{
     display: none;
   }
 }
 
 </style>
         <!-- Hero slider + BG parallax -->
-        <section class="jarallax dark-mode bg-dark py-xxl-5 video-top" style="height: 85vh" data-jarallax data-speed="0.4">
+        <section class="jarallax dark-mode bg-dark py-xxl-5 video-top" style="height: 80vh" data-jarallax data-speed="0.4">
           <div class="overlay"></div>
 
           <!-- The HTML5 video element that will create the background video on the header -->
           <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            {{-- <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4"> --}}
+            <source src="{{ asset('cloud/images/Electric Grippers Replacement.mp4') }}" type="video/mp4">
           </video>
         
           <!-- The header content -->
