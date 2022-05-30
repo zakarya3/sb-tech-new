@@ -111,7 +111,7 @@
                             <td>{{ $item->product_reference }}</td>
                             <td>{{ $item->price }}</td>
                             <td>
-                              <img src="{{ asset('assets/uploads/products/images/'.$item->image) }}" class="cate-image" alt="image here">
+                              <img src="{{ asset('assets/uploads/products/images/'.$item->image) }}" style="width: 50%" class="cate-image" alt="image here">
                             </td>
                             <td>
                               @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
