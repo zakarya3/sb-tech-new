@@ -16,7 +16,7 @@
                   <div class="row">
                     <label for="">Categorie</label>
                     <select class="form-select" required  name="cate_id">
-                        <option value="">select a category</option>
+                        <option value="{{ $products->category->id }}">{{ $products->category->name }}</option>
                         @foreach ($category as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
@@ -25,7 +25,10 @@
                   <div class="row">
                     <label for="">Marque</label>
                     <select class="form-select"  name="brand">
-                        <option value="">{{ $products->brand->brand_name }}</option>
+                      <option value="{{ $products->brand->id }}">{{ $products->brand->brand_name }}</option>
+                        @foreach ($brand as $item)
+                        <option value="{{ $item->id }}">{{ $item->brand_name }}</option>
+                        @endforeach
                     </select>
                   </div>
                   </div>

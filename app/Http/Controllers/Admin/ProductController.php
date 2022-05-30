@@ -52,7 +52,8 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $category = SubCategory::all();
-        return view('admin.products.edit',compact('products','category'));
+        $brand = Brand::all();
+        return view('admin.products.edit',compact('products','category','brand'));
     }
     public function update(Request $request, $id)
     {
@@ -92,6 +93,7 @@ class ProductController extends Controller
             $products->product_brand = $filename;
         }
         $products->cate_id = $request->input('cate_id');
+        $products->brand_id = $request->input('brand');
         $products->product_name = $request->input('title');
         $products->product_description = $request->input('description');
         $products->qty = $request->input('qty');
