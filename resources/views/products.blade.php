@@ -17,73 +17,38 @@
         
                 <!-- Page title + Filters -->
                 <div class="d-lg-flex align-items-center justify-content-between py-4 mt-lg-2">
-                  <h1 class="me-3">Produits</h1>
-                  <div class="d-md-flex mb-3">
-                    <select class="form-select me-md-4 mb-2 mb-md-0" name="choice" id="choice" style="min-width: 240px;">
-                      <option value="All">Tous les categories</option>
-                      @foreach ($category as $item)
-                        @foreach ($item->type as $items)
-                        <option value="Web Development">{{ $items->name }}</option>
-                        @endforeach
-                      @endforeach
-                    </select>
-                    <form action="" method="get" style="display: flex">
-                      <div class="position-relative" style="min-width: 300px;">
-                        <input type="text" name="search" id="search" class="form-control pe-5" placeholder="Search products">
-                        <i class="bx bx-search text-nav fs-lg position-absolute top-50 end-0 translate-middle-y me-3"></i>
-                      </div>
-                      <button style="margin-left: 1em" type="submit" class="btn btn-primary">search</button>
-                    </form>
-                  </div>
+                  <h1 class="me-3">{{ $name }}</h1>
                 </div>
                        <!-- Toolbar-->
                 <div class="bg-light shadow-lg rounded-3 p-4 mt-n5 mb-4" style="margin: .5em 0 3em 0 !important; ">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="dropdown me-2"><a class="btn btn-outline-secondary dropdown-toggle" style="" href="#shop-filters" data-bs-toggle="collapse"><i class='bx bx-filter-alt me-2'></i>Filtrer</a></div>
-                  </div>
                   <!-- Toolbar with expandable filters-->
-                  <div class="collapse" id="shop-filters">
-                    <div class="row pt-4">
-                      <div class="col-lg-4 col-sm-6">
-                        <!-- Categories-->
-                        <div class="card mb-grid-gutter">
-                          <div class="card-body px-4">
-                            <div class="widget widget-categories">
-                              <h3 class="widget-title">Categories</h3>
-                              <div class="accordion mt-n1" id="shop-categories">
-                                <!-- Shoes-->
-                                <div class="accordion-item">
-                                  @foreach ($category as $item)
-                                    @foreach ($item->type as $it)
-                                    <h3><a class="accordion-button collapsed" href="{{ url('products-items/'.$it->name) }}">{{ $it->name }}</a></h3>
-                                    @endforeach
-                                  @endforeach
-                                </div>
-                              </div>
-                            </div>
+                    <div class="row pt-4" style="flex-direction: column; justify-content: center; align-items: center">
+                      <div class="col-lg-4 col-sm-6" style="width: 80%">
+                        <form action="{{ url('search') }}" method="post">
+                          {{ csrf_field() }}
+                          <div class="mb-4" style="display: flex; justify-content: center; align-items: center">
+                            <input class="form-control" name="item"  list="datalist-options" id="datalist-input" placeholder="Chercher sur SB-TECH">
+                            <datalist id="datalist-options">
+                              @foreach ($product as $item)
+                                <option value="{{ $item->product_name }}">
+                              @endforeach
+                            </datalist>
+                            <button style="margin-left: 1em" type="submit" class="btn btn-primary"><i class="bx bx-search"></i></button>
                           </div>
-                        </div>
+                        </form>
                       </div>
-                      <div class="col-lg-4 col-sm-6">
-                        <!-- Filter by Size-->
-                        <div class="card mb-grid-gutter">
-                          <div class="card-body px-4">
-                            <div class="widget widget-categories">
-                              <h3 class="widget-title">Marque</h3>
-                              <div class="accordion mt-n1" id="shop-categories">
-                                <!-- Shoes-->
-                                <div class="accordion-item">
-                                  @foreach ($brand as $item)
-                                    <h3 style="display: flex; justify-content: center; align-items: center"><a class="accordion-button collapsed" href="{{ url('products-items/order-by-brand/'.$item->id) }}">{{ $item->brand_name }}</a><img src="{{ asset('assets/uploads/brands/images/'.$item->image) }}" width="50" alt=""></h3>
-                                  @endforeach
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="col-lg-4 col-sm-6" style="width: 80%">
+                        <div class="mb-4">
+                          <ul class="nav nav-tabs nav-fill">
+                            @foreach ($type as $item)
+                            <li class="nav-item">
+                              <a href="{{ url('/products-items/'.$item->name) }}" class="nav-link justify-content-center">{{ $item->name }}</a>
+                            </li>
+                            @endforeach
+                          </ul>
                         </div>
                       </div>
                     </div>
-                  </div>
                 </div>
         
         

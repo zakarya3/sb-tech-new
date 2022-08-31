@@ -19,6 +19,7 @@ class Product extends Model
         'qty',
         'product_reference',
         'price',
+        'trending',
     ];
 
     public function category()

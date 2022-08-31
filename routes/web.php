@@ -30,9 +30,10 @@ Route::get('contact', [FrontController::class,'contact']);
 Route::put('contact-message', [FrontController::class,'send']);
 Route::get('references', [FrontController::class,'reference']);
 
+Route::get('/products/{name}', [FrontController::class,'products_cat']);
 Route::get('/products-items/{name}',[FrontController::class,'products']);
-Route::get('/products-items/order-by-brand/{id}',[FrontController::class,'filter']);
 
+Route::post('search', [FrontController::class,'search']);
 Route::get('/product/{cat}/{name}',[FrontController::class,'product']);
 
 Route::get('cart', [CartPController::class, 'cartList'])->name('cart.list');
@@ -41,7 +42,7 @@ Route::post('update-cart', [CartPController::class, 'updateCart'])->name('cart.u
 Route::post('remove', [CartPController::class, 'removeCart'])->name('cart.remove');
 Route::post('clear', [CartPController::class, 'clearAllCart'])->name('cart.clear');
 
-Route::put('search', [FrontController::class, 'search']);
+// Route::put('search', [FrontController::class, 'search']);
 
 
 

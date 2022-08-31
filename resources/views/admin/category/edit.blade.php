@@ -21,6 +21,17 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          @if ($category->image)
+                          <img src="{{ asset('assets/uploads/categories/images/'.$category->image) }}" style="width: 60%" alt="">
+                          @endif
+                          <label class="input-group-text" for="image">Image</label>
+                          <input type="file" name="image" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
                     <button type="submit" class="btn btn-primary pull-right">Modifier</button>
                     <div class="clearfix"></div>
                   </form>

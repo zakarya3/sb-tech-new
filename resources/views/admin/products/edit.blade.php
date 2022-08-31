@@ -59,6 +59,10 @@
                         <input type="text" name="ref" value="{{ $products->product_reference }}"  class="form-control">
                       </div>
                     </div>
+                    <div class="col-md-6">
+                      <label for="">Trendig</label>
+                    <input type="checkbox" {{ $products->trending == "1" ? 'checked' : '' }} name="trending" id="">
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">

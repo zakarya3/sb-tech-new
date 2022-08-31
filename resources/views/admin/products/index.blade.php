@@ -58,6 +58,10 @@
                           <input type="text" name="ref" required class="form-control">
                         </div>
                       </div>
+                      <div class="col-md-6">
+                        <label for="">Tendance</label>
+                        <input type="checkbox" name="trending" id="">
+                      </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">

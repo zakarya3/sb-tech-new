@@ -43,6 +43,7 @@ class ProductController extends Controller
         $products->product_description = $request->input('description');
         $products->qty = $request->input('qty');
         $products->product_reference = $request->input('ref');
+        $products->trending = $request->input('trending') == TRUE ? '1':'0';
         $products->price = $request->input('price');
         $products->save();
         return redirect('/products')->with('status'," Product Added Successfully");
@@ -98,6 +99,7 @@ class ProductController extends Controller
         $products->product_description = $request->input('description');
         $products->qty = $request->input('qty');
         $products->product_reference = $request->input('ref');
+        $products->trending = $request->input('trending') == TRUE ? '1':'0';
         $products->price = $request->input('price');
         $products->update();
         return redirect('/products')->with('status'," Product Updated Successfully");

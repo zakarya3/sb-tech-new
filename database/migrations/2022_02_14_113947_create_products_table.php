@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('qty');
             $table->string('product_reference');
             $table->float('price')->nullable();
+            $table->tinyInteger('trending');
             $table->timestamps();
         });
     }

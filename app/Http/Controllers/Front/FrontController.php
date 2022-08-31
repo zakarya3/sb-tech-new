@@ -21,7 +21,9 @@ class FrontController extends Controller
     public function index()
     {
         $cartItems = \Cart::getContent();
-        return view('welcome', compact('cartItems'));
+        $latest = Product::latest()->take(10)->get();
+        $featured_products = Product::where('trending','1')->take(8)->get();
+        return view('welcome', compact('cartItems', 'featured_products','latest'));
     }
 
     public function products($name)
@@ -29,21 +31,37 @@ class FrontController extends Controller
         if (SubCategory::where('name',$name)->exists()) {
             $category = SubCategory::where('name',$name)->first();
             $id = $category->id;
-            $brand = Brand::all();
+            $id_tp = $category->categ_id;
+            $type = SubCategory::where('categ_id',$id_tp)->get();
             $product = Product::where('cate_id',$id)->paginate(12);
             $cartItems = \Cart::getContent();
-            return view('products',compact('product','brand','cartItems'));
+            return view('products',compact('product','type','cartItems','name'));
 
         }
     }
-
-
-    public function filter($id)
+    public function products_cat($name)
     {
-        $product = Product::where('brand_id',$id)->paginate(12);
-        $brand = Brand::all();
+        if (Category::where('name',$name)->exists()) {
+            $cartItems = \Cart::getContent();
+            $category1 = Category::where('name',$name)->first();
+            $id = $category1->id;
+            $type = SubCategory::where('categ_id',$id)->get();
+            $id_type = SubCategory::where('categ_id',$id)->pluck('id');
+            $product = Product::whereIn('cate_id',$id_type)->paginate(12);
+            return view('products',compact('type','name','product','cartItems'));
+
+        }
+    }
+    public function search(Request $request)
+    {
+        $name = $request->item;
+        $product = Product::where('product_name',$name)->first();
+        $id_prd = $product->cate_id;
+        $category = SubCategory::where('id',$id_prd)->first();
+        $id = $category->id;
+        $other_prd = Product::where('cate_id',$id)->get()->take(3);
         $cartItems = \Cart::getContent();
-        return view('products',compact('product','brand','cartItems'));
+        return view('product', compact('product','name','cartItems','other_prd'));
     }
 
     public function product($cate, $name)
@@ -71,11 +89,17 @@ class FrontController extends Controller
         $subject = $request->subject;
         $message1 = $request->message;
         $data = ['name'=> $name, 'phone'=> $phone, 'email'=> $email, 'subject'=> $subject, 'message1'=> $message1];
-        Mail::send('message', $data, function ($message) use ($email) {
-            $message->to('info@sbtech.ma');
-            $message->subject('Question?');
-        });
-        return redirect()->back();
+        $token = $request->input('g-recaptcha-response');
+        if ($token) {
+            Mail::send('message', $data, function ($message) use ($email) {
+                $message->to('info@sbtech.ma');
+                $message->subject('Question?');
+            });
+            return redirect()->back();
+        } else {
+            return redirect()->back()->with('status', 'please make sure to select the captcha');
+        }
+        
     }
 
     public function reference()

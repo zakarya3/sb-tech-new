@@ -48,6 +48,15 @@
             <textarea id="message" name="message" class="form-control form-control-lg" rows="4" required></textarea>
             <div class="invalid-feedback">Please write your message!</div>
           </div>
+          <div class="col-12 mb-4">
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}
+          </div>
+          @if (session('status'))
+            <div class="alert alert-danger" role="alert" >
+                {{ session('status') }}
+            </div>
+          @endif
         </div>
         <button type="submit" class="btn btn-primary btn-lg shadow-primary">Envoyer</button>
       </form>

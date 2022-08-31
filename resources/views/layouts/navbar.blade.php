@@ -18,6 +18,7 @@
 
   <!-- Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+</script>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Favicon and Touch Icons -->
   <link rel="shortcut icon" href="{{ asset('assets/img/logo/logosvg.svg') }}" type="image/svg" />
@@ -32,7 +33,15 @@
 
   <!-- Main Theme Styles + Bootstrap -->
   <link rel="stylesheet" media="screen" href="{{ asset('frontend/css/theme.min.css') }}" />
-  <link rel="stylesheet" href="{{ asset('frontend/css/theme.min1.css') }}" />
+  <link rel="stylesheet" href="{{ asset('frontend/css/theme.min1.css') }}" /><!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KVXE8PQ23F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-KVXE8PQ23F');
+  </script>
 
   <!-- Page loading styles -->
   <style>
@@ -176,11 +185,11 @@
     <!-- Navbar -->
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
     <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
-      <div class="container px-3">
+      <div class="container px-3" style="margin: 0; max-width: 100%;">
         <a href="{{ url('/') }}" class="navbar-brand pe-3">
-          <img src="{{ asset('assets/img/logo/logo.png') }}" width="150" alt="SB-TECH" />
+          <img src="{{ asset('assets/img/logo/logo.png') }}" width="100" alt="SB-TECH" />
         </a>
-        <div id="navbarNav" class="offcanvas offcanvas-end">
+        <div id="navbarNav" class="offcanvas offcanvas-end" style="align-items: center">
           <div class="offcanvas-header border-bottom">
             <h5 class="offcanvas-title">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -190,30 +199,24 @@
               <li class="nav-item">
                 <a href="{{ url('/') }}" class="nav-link">Accueil</a>
               </li>
+              @foreach ( $category as  $item )
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Produits <i class='bx bx-chevron-down'></i></a>
-                <ul class="dropdown-menu">
-                  @foreach ($category as  $item)
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">{{ $item->name }} <i class='bx bx-chevron-right'></i></a>
-                    <ul class="dropdown-menu">
-                      @foreach ($item->type as $items)
-                      <li><a class="dropdown-item" href="{{ url('products-items/'.$items->name) }}">{{ $items->name }}</a></li>
-                      @endforeach
-                    </ul>
-                  </li>
-                  @endforeach
-                </ul>
+                <a href="{{ url('products/'.$item->name) }}" class="nav-link dropdown-toggle" aria-current="page" style="font-size: 15px">{{ $item->name }} <i class='bx bx-chevron-down'></i></a>
+                <div class="dropdown-menu p-0">
+                  <div class="d-lg-flex">
+                    <div class="mega-dropdown-column bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0" style="background-image: url({{ asset('assets/uploads/categories/images/'.$item->image) }}); margin: -1px; height: 200px"></div>
+                    <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                      <ul class="list-unstyled mb-0">
+                        @foreach ( $item->type as $items )
+                        <li><a href="{{ url('products-items/'.$items->name) }}" class="dropdown-item">{{ $items->name }}</a></li>
+                        @endforeach
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
               </li>
-              <li class="nav-item ">
-                <a href="{{ url('contact') }}" class="nav-link" >Contactez-nous</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('overview') }}" class="nav-link">Cloud</a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ url('myorders') }}" class="nav-link">Mes commandes</a>
-              </li>
+              @endforeach
             </ul>
           </div>
         </div>
@@ -261,10 +264,8 @@
                   </div>
                 @endforeach
               </div>
-              <div class="d-flex flex-wrap justify-content-between
-                  align-items-center py-3"></div>
-              <a class="btn btn-primary btn-sm d-block w-100" href="{{ url('cart') }}"><i class="fas fa-shopping-cart me-2
-                    fs-base align-middle"></i>Checkout</a>
+              <div class="d-flex flex-wrap justify-content-between align-items-center py-3"></div>
+              <a class="btn btn-primary btn-sm d-block w-100" href="{{ url('cart') }}"><i class="fas fa-shopping-cart me-2 fs-base align-middle"></i>Checkout</a>
             </div>
           </div>
         </div>
@@ -316,6 +317,12 @@
                   <a href="{{ url('/') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Accueil</a>
                 </li>
                 <li class="nav-item">
+                  <a href="{{ url('/contact') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Contactez-nous</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ url('/myorders') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Mes commandes</a>
+                </li>
+                <li class="nav-item">
                   <a href="{{ url('references') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
@@ -361,6 +368,10 @@
   <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
   <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
 </a>
+
+<div class="whatsapp" style="position: fixed; bottom: 90px; right: 20px;">
+  <a href="https://wa.me/0661461155" target="_blank"><img src="{{ asset('assets/img/icons/whatsapp.png') }}" width="50px" alt=""></a>
+</div>
 
 <!-- Vendor Scripts -->
 <script src="{{ asset('frontend/js/jquery.js') }}"></script>

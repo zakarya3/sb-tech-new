@@ -20,6 +20,14 @@
                         </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image</label>
+                          <input type="file" required name="image" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
                     <button type="submit" class="btn btn-primary pull-right">Ajouter</button>
                     <div class="clearfix"></div>
                   </form>
@@ -50,6 +58,9 @@
                             </td>
                             <td>
                               {{ $item->name }}
+                            </td>
+                            <td>
+                              <img src="{{ asset('assets/uploads/categories/images/'.$item->image) }}" class="cate-image" style="width: 40%"alt="image here">
                             </td>
                             <td>
                                @if (Auth::user()->role_as == 1 || Auth::user()->role_as == 3)
