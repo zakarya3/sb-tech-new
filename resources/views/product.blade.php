@@ -36,20 +36,28 @@ table, th, td {
                         <div class="col-lg-7 pe-lg-0 pt-lg-4">
                             <div class="product-gallery">
                                 <div class="product-gallery-preview order-sm-2">
-                                    <div class="product-gallery-preview-item active" id="first"><img class="image-zoom" src="{{ asset('assets/uploads/products/images/'.$product->image) }}" data-zoom="{{ asset('assets/uploads/products/images/'.$product->image) }}" alt="Product image">
-                                        <div class="image-zoom-pane"></div>
-                                    </div>
-                                    <div class="product-gallery-preview-item" id="second"><img class="image-zoom"
-                                            src="{{ asset('assets/uploads/brands/images/'.$product->brand->image) }}"
-                                            data-zoom="{{ asset('assets/uploads/brands/images/'.$product->brand->image) }}" alt="Product image">
+                                    <div class="product-gallery-preview-item active" id="first"><img class="image-zoom pro-img" src="{{ asset('assets/uploads/products/images/'.$product->image) }}" data-zoom="{{ asset('assets/uploads/products/images/'.$product->image) }}" alt="Product image">
                                         <div class="image-zoom-pane"></div>
                                     </div>
                                 </div>
-                                <div class="product-gallery-thumblist order-sm-1"><a
-                                        class="product-gallery-thumblist-item active" href="#first"><img
-                                            src="{{ asset('assets/uploads/products/images/'.$product->image) }}" alt="Product thumb"></a><a
-                                        class="product-gallery-thumblist-item" href="#second"><img
-                                            src="{{ asset('assets/uploads/brands/images/'.$product->brand->image) }}" alt="Product thumb"></a></div>
+                                <div class="product-gallery-thumblist order-sm-1">
+                                    <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image) }}" alt="Product thumb"></a>
+                                    @if ($product->image1 != null)
+                                        <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image1) }}" alt="Product thumb"></a>
+                                    @endif
+                                    @if ($product->image2 != null)
+                                        <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image2) }}" alt="Product thumb"></a>
+                                    @endif
+                                    @if ($product->image3 != null)
+                                        <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image3) }}" alt="Product thumb"></a>
+                                    @endif
+                                    @if ($product->image4 != null)
+                                        <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image4) }}" alt="Product thumb"></a>
+                                    @endif
+                                    @if ($product->image5 != null)
+                                        <a class="product-gallery-thumblist-item pic" onclick="changeImage(this)"><img src="{{ asset('assets/uploads/products/images/'.$product->image5) }}" alt="Product thumb"></a>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <!-- Product details-->
@@ -191,4 +199,9 @@ table, th, td {
       
               </div>
         </div>
+        <script>
+            function changeImage(event) { 
+                document.querySelector(".pro-img").src=event.children[0].src
+             }
+        </script>
 @endsection

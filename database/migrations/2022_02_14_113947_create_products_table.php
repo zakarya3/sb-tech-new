@@ -20,6 +20,11 @@ return new class extends Migration
             $table->text('product_description')->nullable();
             $table->bigInteger('brand_id');
             $table->string('image');
+            $table->string('image1')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
+            $table->string('image4')->nullable();
+            $table->string('image5')->nullable();
             $table->string('fiche');
             $table->string('qty');
             $table->string('product_reference');

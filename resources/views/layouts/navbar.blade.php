@@ -217,6 +217,9 @@
                 </div>
               </li>
               @endforeach
+              <li class="nav-item">
+                <a href="{{ url('/') }}" target="_blank" class="nav-link">Cloud</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -326,7 +329,7 @@
                   <a href="{{ url('references') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Références</a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ url('/dashboard') }}" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>
+                  <a href="{{ url('/dashboard') }}" target="_blank" class="nav-link d-inline-block px-0 pt-1 pb-2">Connexion</a>
                 </li>
               </ul>
             </div>
@@ -344,7 +347,7 @@
                 <a href="https://www.instagram.com/sbtech_automation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-instagram me-2"></i>sbtech_automation</a>
               </li>
               <li class="nav-item">
-                <a href="tel:+212 661461155" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
+                <a href="https://wa.me/0661461155" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class='bx bxl-whatsapp me-2'></i>+212 6 61 46 11 55</a>
               </li>
               <li class="nav-item">
                 <a href="https://www.linkedin.com/company/sbtech-automation/" class="nav-link d-inline-block px-0 pt-1 pb-2"><i class="bx bxl-linkedin me-2"></i>SB-TECH</a>
@@ -369,8 +372,14 @@
   <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
 </a>
 
-<div class="whatsapp" style="position: fixed; bottom: 90px; right: 20px;">
-  <a href="https://wa.me/0661461155" target="_blank"><img src="{{ asset('assets/img/icons/whatsapp.png') }}" width="50px" alt=""></a>
+<div class="whatsapp" style="position: fixed; bottom: 70px; right: 20px; z-index: 50;">
+  <a href="https://wa.me/0661461155" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" width="50px" alt=""></a>
+</div>
+<div class="facebook" style="position: fixed; bottom: 125px; right: 20px; z-index: 50;">
+  <a href="https://www.facebook.com/sbtechautomation/" target="_blank"><img src="{{ asset('assets/img/icons/facebook.png') }}" width="50px" alt=""></a>
+</div>
+<div class="facebook" style="position: fixed; bottom: 180px; right: 20px; z-index: 50;">
+  <a href="https://www.instagram.com/sbtech_automation/" target="_blank"><img src="{{ asset('assets/img/icons/whatsapp.png') }}" width="50px" alt=""></a>
 </div>
 
 <!-- Vendor Scripts -->

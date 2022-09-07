@@ -66,8 +66,48 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="input-group mb-3">
-                          <label class="input-group-text" for="image">Image</label>
-                          <input type="file" required name="image" class="form-control" id="image">
+                          <label class="input-group-text" for="image">Image principale</label>
+                          <input type="file" name="image" required class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image (optional)</label>
+                          <input type="file" name="image1" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image (optional)</label>
+                          <input type="file" name="image2" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image (optional)</label>
+                          <input type="file" name="image3" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image (optional)</label>
+                          <input type="file" name="image4" class="form-control" id="image">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="input-group mb-3">
+                          <label class="input-group-text" for="image">Image (optional)</label>
+                          <input type="file" name="image5" class="form-control" id="image">
                         </div>
                       </div>
                     </div>
