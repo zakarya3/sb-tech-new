@@ -3606,7 +3606,6 @@ fieldset:disabled .btn {
     position: absolute;
     z-index: 1000;
     display: none;
-    min-width: 10rem;
     padding: 0.5rem 0;
     margin: 0;
     font-size: 1rem;
@@ -12044,9 +12043,6 @@ ol.list-style li::before {
     white-space: nowrap;
     content: "." counter(li);
 }
-.list-unstyled > li {
-    margin-bottom: 0.4rem;
-}
 .list-unstyled > li ul li,
 .list-unstyled > li ol li {
     margin-bottom: 0.333rem;
@@ -14133,7 +14129,6 @@ a.nav-link:hover .media-tab-media {
     font-weight: 500;
 }
 .navbar-nav .dropdown-menu {
-    min-width: 20rem;
     padding-top: 0;
     box-shadow: none;
     border: none;

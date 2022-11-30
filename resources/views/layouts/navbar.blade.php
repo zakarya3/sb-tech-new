@@ -203,12 +203,12 @@
               <li class="nav-item dropdown">
                 <a href="{{ url('products/'.$item->name) }}" class="nav-link dropdown-toggle" aria-current="page" style="font-size: 15px">{{ $item->name }} <i class='bx bx-chevron-down'></i></a>
                 <div class="dropdown-menu p-0">
-                  <div class="d-lg-flex">
-                    <div class="mega-dropdown-column bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0" style="background-image: url({{ asset('assets/uploads/categories/images/'.$item->image) }}); margin: -1px; height: 200px"></div>
-                    <div class="mega-dropdown-column pt-lg-3 pb-lg-4">
+                  <div class="d-lg-flex" style="flex-direction: column; justify-content: center">
+                    <div class="bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0"><img src="{{ asset('assets/uploads/categories/images/'.$item->image) }}" alt=""></div>
+                    <div class="pt-lg-3 pb-lg-4">
                       <ul class="list-unstyled mb-0">
                         @foreach ( $item->type as $items )
-                        <li><a href="{{ url('products-items/'.$items->name) }}" class="dropdown-item">{{ $items->name }}</a></li>
+                        <li><a style="text-align: center; font-size: 11px !important" href="{{ url('products-items/'.$items->name) }}" class="dropdown-item">{{ $items->name }}</a></li>
                         @endforeach
                       </ul>
                     </div>
