@@ -379,7 +379,7 @@
   <a href="https://www.facebook.com/sbtechautomation/" target="_blank"><img src="{{ asset('assets/img/icons/facebook.png') }}" width="50px" alt=""></a>
 </div>
 <div class="facebook" style="position: fixed; bottom: 180px; right: 20px; z-index: 50;">
-  <a href="https://www.instagram.com/sbtech_automation/" target="_blank"><img src="{{ asset('assets/img/icons/whatsapp.png') }}" width="50px" alt=""></a>
+  <a href="https://wa.me/0661461155" target="_blank"><img src="{{ asset('assets/img/icons/whatsapp.png') }}" width="50px" alt=""></a>
 </div>
 
 <!-- Vendor Scripts -->
