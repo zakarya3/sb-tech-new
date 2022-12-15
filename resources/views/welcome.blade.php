@@ -172,7 +172,7 @@
           <section class="container py-5 my-2 my-md-4 my-lg-5">
             <h2 class="h1 text-center pt-1 pt-xl-2 mb-4">POURQUOI NOUS SOMMES LE FOURNISSEUR IDÉAL ?</h2>
             <p class="fs-lg text-muted text-center pb-4 mb-2 mb-lg-3">
-              SB-TECH met en oeuvre des outils fiables pour optimiser l'offre en vue de répondre aux besoins de chaque client quelle que soit son activité.
+              SB-TECH met en oeuvre des outils fiables pour optimiser l'offre en vue de répondre aux besoins de chaque client quelle que soit son activité. <br> Télécharger le catalogue <a href="{{ asset('assets/img/catalogue/Catalogue.pdf') }}" download>Clique ici.</a>
             </p>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 pb-xl-3">
               <div class="col text-center border-end">
