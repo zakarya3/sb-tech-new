@@ -194,14 +194,14 @@
             <h5 class="offcanvas-title">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
+          <div class="offcanvas-body" style="width: 100%">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a href="{{ url('/') }}" class="nav-link">Accueil</a>
               </li>
               @foreach ( $category as  $item )
               <li class="nav-item dropdown">
-                <a href="{{ url('products/'.$item->name) }}" class="nav-link dropdown-toggle" aria-current="page" style="font-size: 15px">{{ $item->name }} <i class='bx bx-chevron-down'></i></a>
+                <a href="{{ url('products/'.$item->name) }}" class="nav-link dropdown-toggle" aria-current="page" style="font-size: 14px">{{ $item->name }} <i class='bx bx-chevron-down'></i></a>
                 <div class="dropdown-menu p-0">
                   <div class="d-lg-flex" style="flex-direction: column; justify-content: center">
                     <div class="bg-position-center bg-repeat-0 bg-size-cover rounded-3 rounded-end-0"><img src="{{ asset('assets/uploads/categories/images/'.$item->image) }}" alt=""></div>
@@ -373,7 +373,7 @@
 </a>
 
 <div class="whatsapp" style="position: fixed; bottom: 70px; right: 20px; z-index: 50;">
-  <a href="https://wa.me/0661461155" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" width="50px" alt=""></a>
+  <a href="https://www.instagram.com/sbtech_automation/" target="_blank"><img src="{{ asset('assets/img/icons/instagram.png') }}" width="50px" alt=""></a>
 </div>
 <div class="facebook" style="position: fixed; bottom: 125px; right: 20px; z-index: 50;">
   <a href="https://www.facebook.com/sbtechautomation/" target="_blank"><img src="{{ asset('assets/img/icons/facebook.png') }}" width="50px" alt=""></a>
