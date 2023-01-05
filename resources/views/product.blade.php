@@ -68,7 +68,7 @@ table, th, td {
                                 @else
                                 <div class="mb-3"><span class="h3 fw-normal text-accent me-1">{{ $product->price }}<small>Contactez-nos</small></span></div>
                                 @endif
-                                @if ($product->qty > 0)
+                                @if ($product->qty > 0 || $product->qty == null)
                                 <label for="" class="badge bg-success">In stock</label>
                                 <input type="hidden" value="{{ $product->id }}" class="prod_id">
                                 <div class="row mt-2">
