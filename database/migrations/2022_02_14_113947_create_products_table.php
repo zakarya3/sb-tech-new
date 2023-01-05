@@ -25,8 +25,8 @@ return new class extends Migration
             $table->string('image3')->nullable();
             $table->string('image4')->nullable();
             $table->string('image5')->nullable();
-            $table->string('fiche');
-            $table->string('qty');
+            $table->string('fiche')->nullable();
+            $table->string('qty')->nullable();
             $table->string('product_reference');
             $table->float('price')->nullable();
             $table->tinyInteger('trending');

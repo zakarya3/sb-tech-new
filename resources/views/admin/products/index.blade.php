@@ -41,7 +41,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Quantité</label>
-                          <input type="number" name="qty" required class="form-control">
+                          <input type="number" name="qty" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -115,7 +115,7 @@
                       <div class="col-md-12">
                         <div class="input-group mb-3">
                           <label class="input-group-text" for="image">Fiche Technique</label>
-                          <input type="file" required name="fiche" class="form-control" id="image">
+                          <input type="file" name="fiche" class="form-control" id="image">
                         </div>
                       </div>
                     </div>
