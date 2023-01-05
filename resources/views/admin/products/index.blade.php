@@ -23,7 +23,7 @@
                     </div>
                     <div class="row">
                       <label for="">Marque</label>
-                      <select class="form-select" required name="brand">
+                      <select class="form-select" name="brand">
                           <option value="">Select a brand</option>
                           @foreach ($brand as $item)
                           <option value="{{ $item->id }}">{{ $item->brand_name }}</option>
@@ -150,7 +150,7 @@
                           @foreach ($products as $item)
                           <tr>
                             <td>{{ $item->id }}</td>
-                            <td>{{ $item->category->name }}</td>
+                            <td>{{ $item->category->name ?? 'None'}}</td>
                             <td>{{ $item->product_name }}</td>
                             <td>{{ $item->product_reference }}</td>
                             <td>{{ $item->price }}</td>
