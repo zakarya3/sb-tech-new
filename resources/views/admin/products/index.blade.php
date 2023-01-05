@@ -55,7 +55,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Référence</label>
-                          <input type="text" name="ref" required class="form-control">
+                          <input type="text" name="ref" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-6">
