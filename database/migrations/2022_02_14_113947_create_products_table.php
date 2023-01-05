@@ -18,7 +18,7 @@ return new class extends Migration
             $table->bigInteger('cate_id');
             $table->string('product_name');
             $table->text('product_description')->nullable();
-            $table->bigInteger('brand_id');
+            $table->bigInteger('brand_id')->nullable();
             $table->string('image');
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
