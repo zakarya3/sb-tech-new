@@ -136,9 +136,11 @@ table, th, td {
                                         <div class="accordion-collapse collapse" id="details"
                                             data-bs-parent="#productPanels">
                                             <div class="accordion-body fs-sm">
+                                                @if ($product->brand_id != null)
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <img src="{{ asset('assets/uploads/brands/images/'.$product->brand->image) }}" alt="">
                                                 </div>
+                                                @endif
                                                 <div class="d-flex justify-content-between border-bottom py-2">
                                                     <div>
                                                         <div class="fw-semibold text-dark">Référence</div>
