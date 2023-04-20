@@ -86,6 +86,8 @@
             </div>
           </div>
           </section>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
                 <!-- Popular posts (Carousel) -->
       <section class="bg-secondary py-5 mb-lg-5">
@@ -93,29 +95,7 @@
           <h2 class="h1 mb-4 pb-lg-3 pt-lg-1 pb-1 text-center">Bonnes affaires</h2>
         </div>
         <div class="pb-lg-5 mb-xl-3">
-          <div class="swiper" data-swiper-options='{
-            "slidesPerView": 1,
-            "centeredSlides": true,
-            "loop": true,
-            "pagination": {
-              "el": ".swiper-pagination",
-              "clickable": true
-            },
-            "breakpoints": {
-              "0": {
-                "slidesPerView": 1
-              },
-              "576": {
-                "slidesPerView": 2
-              },
-              "768": {
-                "slidesPerView": 3
-              },
-              "1200": {
-                "slidesPerView": 4
-              }
-            }
-          }'>
+          <div class="swiper-container">
             <div class="swiper-wrapper">
 
               <!-- Item -->
@@ -160,6 +140,26 @@
               </div>
               @endforeach
             </div>
+              <script>
+       var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 4,
+        centeredSlides: true, 
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+      pagination: {
+       el: '.swiper-pagination',
+       clickable: true,
+       },
+      navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      },
+     });
+   </script>
 
             <!-- Pagination (bullets) -->
             <div class="swiper-pagination position-relative pt-1 pt-sm-3 mt-5 d-xl-none d-flex"></div>
